@@ -1,112 +1,434 @@
-html, body, div, span, object, iframe,h1, h2, 
-h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, 
-em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, 
-ol, ul, li,fieldset, form, label, legend,table, caption, tbody, 
-tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption, 
-figure, footer, header, hgroup, menu, nav, section, summary,time, mark, 
-audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-    outline-style:none; 
+* {
+	padding: 0;
+	margin: 0;
 }
-
-body {
-    line-height:1;
-}
- 
-a{
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-     
-}
-a:hover,a:focus{
-    text-decoration:none;
-    bblr:expression(this.onFocus=this.blur());/*IE*/
-    outline-style:none;/*FF*/ 
-    }
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
- 
-input, select {
-    vertical-align:middle;
-}
-
-/*css为clearfix，清除浮动*/
-.clearfix::before,.clearfix::after{
-    content: "";
-    height: 0;
-    line-height: 0;
-    display: block;
-    visibility: hidden;
-    clear: both;
-}
-.clearfix:after{clear:both;} 
-.clearfix{ 
-    *zoom:1;/*IE/7/6*/
-}
-
-/*css初始化结束*/
-
 html{
 	width: 100%;
-	height: auto;/*auto*/
-	border: solid 1px red;
-	position: relative;
-}
-body{
-	width: 100%;
-	height: auto;/*auto*/
-	border: solid 1px yellowgreen;
-	position: relative;
-}
-/*固定HTML及body的大小*/
-.index_body{
-	width: 100%;
-	height: 1000px;
-	background: red;
-	margin: 0 auto;
-	position: relative;
+	height: auto;
 }
 
-/*logo开始*/
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+
+body{
+	width: 1300px;
+	height: auto;
+	margin: 0 auto;
+	border: solid 1px blue;
+	font-family: "microsoft yahei";
+	color: #909090;
+}
+
+
+.T_left,.shouji,.T_right{
+	float: left;
+	line-height: 30px;
+}
 .top{
 	width: 100%;
 	height: 30px;
+	color: white;
+	background-color: rgb(51,51,51);
+}
+
+.shouji{
+    width: 35px;
+    height: 100%;
+    margin-left: 33px;
+    background-image: url(../img/chugao.png);
+    background-position: -163px -33px;
+}
+
+.T_left{
+	width: 170px;
+	height: 100%;
+}
+
+.T_right{
+	width: 120px;
+	height: 100%;
+	float: right;
+	cursor: pointer;
+}
+/*头部结束*/
+
+.nav{
+	width: 1300px;
+	height: 109px;
+	border-bottom: solid 1px darkgray;
+}
+
+.N_center{
+	width: 964px;
+	height: 79px;
+	margin: 0 auto;
+}
+
+.logo{
+	width: 137px;
+	height: 60px;
+	border: solid deepskyblue 1px;
+	border-radius: 5px;
+	float: left;
+	margin: 10px;
+	margin-right: 12px;
+}
+
+.select{
+	width: 800px;
+	height: 60px;
+	float: left;
+	margin-top: 10px;
+}
+
+.didian{
+	width: 60px;
+	height: 25px;
+	font-size: 20px;
+	margin-top: 14.5px;
+	float: left;
+	color: #010101;
+}
+
+.qiehuan{
+	width: 80px;
+	height: 14px;
+	float: left;
+	margin: 22px 0 0 25px;
+	cursor: pointer;
+}
+
+.seach{
+	width: 524px;
+	height: 36px;
+	float: right;
+	margin-top: 2px;
+	border: 1px solid gainsboro;
+}
+
+.seach input{
+	width: 420px;
+    height: 35px;
+    border: none;
+}
+
+.sousuo{
+	width: 103px;
+	height: 36px;
+	background: gainsboro;
+	float: right;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	line-height: 36px;
+	cursor: pointer;
+}
+
+.S_con{
+	width: 524px;
+    height: 25px;
+    float: left;
+    margin-left: 275px;
+}
+
+.navgation{
+	width: 100%;
+	height: 29px;
+}
+
+.nav_center{
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 22px;
+}
+.nav_center ul li{
+	width: auto;
+	height: auto;
+	float: left;
+	margin-left: 80px;
+	cursor: pointer;
+}
+/*导航结束*/
+.home-page{
+	height: auto;
+}
+
+.center{
+	width: 1300px;
+	height: 1388px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.content{
+	width: 964px;
+	height: auto;
+	margin: 0 auto;
+}
+
+/*内容区左边目录*/
+.C_left{
+	width: 196px;
+	height: 100%;
+	/*border: solid 1px rosybrown;*/
+	float: left;
+}
+
+.mulu{
+width: 100%;
+height: auto;
+}
+
+.mulu ul{
+	width: 100%;
+	height: 100%;
+}
+
+.mulu ul li{
+	width: 100%;
+	height: auto;
+	margin: 15px 0;
+	font-size: 18px;
+}
+.mulu ul li span{
+	display: inline-block;
+	float: right;
+}
+
+.mulu ul li img{
+	float: right;
+}
+
+.adv{
+	width: 196px;
+	height: 206px;
 	background: yellow;
 	position: relative;
 }
-/*logo结束*/
 
-/*导航开始*/
-.nav{
-	width: 100%;
-	height: 56px;
-	background: blue;
+#adv{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(../img/chugao.png);
+	background-position: -258px -33px;
+}
+/*内容去目录结束*/
+
+.C_right{
+	width: 755px;
+	height: 100%;
+	float: left;
+	margin-left: 10px;
 	position: relative;
 }
-/*中部开始*/
-.center{
-	width: 1024px;
-	height: 800px;
-	background: greenyellow;
+
+.banner{
+	width: 100%;
+	height: 305px;
+	border: solid 1px lawngreen;
+	position: relative;
+}
+
+.all {
+    width: 100%;
+    height: 305px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen li {
+    width: 768px;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.screen ul {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 4622px;
+    height: 100%;
+}
+
+.screen li img{
+	width: 100%;
+}
+
+.title{
+	width: 100%;
+	height: 36px;
+	background: gainsboro;
+	margin-top: 25px;
+}
+
+.title span:nth-child(1),.title span:nth-child(2){
+	font-size: 24px;
+	color: #000000;
+	margin: 0 24px;
+}
+
+.title span:nth-child(2){
+	color: gray;
+}
+.C__bottom{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+
+.C__bottom ul{
+	width: 100%;
+	height: 100%;
+}
+
+.C__bottom ul li{
+	width: 100%;
+	height: 126px;
+	border-bottom: dashed 0.5px gainsboro;
+	position: relative;
+}
+
+.post,.post1{
+	width: 335px;
+	height: 100%;
+	float: left;
+	padding-left: 15px;
+	font-size: 14px;
+}
+
+.post1{
+	margin-left: 50px;
+}
+
+.post div,.post1 div{
+	float: left;
+	margin-right: 12px;
+}
+
+.post div:nth-child(2),.post1 div:nth-child(2){
+	font-size: 18px;
+	color: #873e35;
+	cursor: pointer;
+}
+
+.post1 div:nth-child(3),.post1 div:nth-child(2){
+	width: 100%;
+}
+
+.post div:nth-child(6){
+	color: red;
+	margin-right: 32px;
+}
+
+.post div:nth-child(9),.post div:nth-child(10),.post div:nth-child(11){
+	border: solid 1px gainsboro;
+	font-size: 12px;
+	cursor: pointer;
+}
+.mores{
+	float: left;
+	margin-top: 5px;
+	font-size: 18px;
+	color: #873e35;
+}
+.more{
+	width: 40px;
+    height: 32px;
+    background-image: url(../img/chugao.png);
+    background-position: -34px -30px;
+    float: left;
+}
+.more2{
+	position: absolute;
+    right: 15px;
+    margin-top: 20px;
+    background: gainsboro;
+    padding: 3px 15px;
+    cursor: pointer;
+}
+/*内容区结束*/
+
+.bottom{
+	width: 100%;
+	height: 122px;
+	background: gainsboro;
+	margin: 5px 0;
+	color: #873e35;
+}
+
+.B_center{
+	width: 1200px;
+	height: 100px;
 	margin: 0 auto;
 	position: relative;
+	top: 20px;
+}
+.B_logo{
+	width: 213px;
+	height: 76px;
+	border: solid 1px deepskyblue;
+	float: left;
+	margin-right: 10px;
+	}
+
+.B_center ul,.B_center ul li{
+	float: left;
 }
 
-/*底部开始*/
-.footer{
-	width: 100%;
-	height: 50px;
-	background: deepskyblue;
+.B_center ul{
+	position: relative;
+	top: 25px;
 }
+
+.B_center ul li{
+	margin-right: 20px;
+}
+
+.bottom p{
+	display: inline-block;
+	position: relative;
+	left: 340px;
+}
+
+
+/*城市选择开始*/
+#city{
+	width: 500px;
+	height: 400px;
+	background:greenyellow;
+	display: none;
+	position: absolute;
+	top: 155px;
+	left: 500px;
+	box-shadow: 10px 10px 5px #122B40; 
+}
+
+#del{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(../img/chugao.png);
+	background-position: -260px -33px;
+}
+
+
+
+
