@@ -72,7 +72,7 @@ var Home = Vue.extend({
 	}
 })
 
-/* 列表页组件 */
+/* 招聘页组件 */
 var List = Vue.extend({
 	template: Util.tpl('tpl_list'),
 	data: function () {
@@ -153,7 +153,7 @@ var List = Vue.extend({
 	}
 })
 
-/* 商品组件 */
+/* 职业培训组件 */
 var Product = Vue.extend({
 	template: Util.tpl('tpl_product'),
 	data: function () {
@@ -179,9 +179,19 @@ var Product = Vue.extend({
 	}
 })
 
+var Employment = Vue.extend({
+	template:Util.tpl('tpl_employment'),
+	data:function () {
+		return {
+			
+		}
+	}
+})
+
 Vue.component('home', Home)
 Vue.component('list', List)
 Vue.component('product', Product)
+Vue.component('employment',Employment)
 
 var app = new Vue({
 	el: '#app',

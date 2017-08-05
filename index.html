@@ -23,13 +23,9 @@
 		<span>注册</span>
 	</div>
 </div>
-	<component v-bind:is="view"></component><!--挂载点-->
-</div>
 
-<!--模板1-->
-<script type="text/template" id="tpl_home">
-	<section class="home-page">
-		<div class="nav">
+
+<div class="nav">
 			<div class="N_center">
 				<div class="logo">
 					logo
@@ -46,52 +42,59 @@
 						</div>
 					</div>
 					<div class="S_con">
-						热门搜索： 设计    行政管理   财务  销售
+						热门搜索： <a href=""><span>设计</span></a> <a href=""><span>行政管理</span></a> <a href=""><span>财务</span></a> <a href=""><span>销售</span></a>
 					</div>
 				</div>
 			</div>
 			<div class="navgation">
 				<div class="nav_center">
 					<ul>
-						<li>首页</li>
-						<li>招聘</li>
-						<li>职业培训</li>
-						<li>就业指导</li>
+						<a href="#home"><li>首页</li></a>
+						<a href="#list"><li>招聘</li></a>
+						<a href="#product"><li>职业培训</li></a>
+						<a href="#employment"><li>就业指导</li></a>
 					</ul>
 				</div>
 			</div>
 		</div><!--导航栏结束-->
+		
+	<component v-bind:is="view"></component><!--挂载点-->
+</div>
+
+<!--模板1：首页内容-->
+<script type="text/template" id="tpl_home">
+	<section class="home-page">
 		<div class="center">
 			<div class="content">
 				<div class="C_left">
 					<div class="mulu"><!--目录-->
 						<ul>
 							<li class="type">
-								生活&nbsp;|&nbsp;服务业  <span>></span>
+								生活&nbsp;|&nbsp;服务业  <span></span>
 							</li>
 							<li class="type">
-								人力&nbsp;|&nbsp;行政 &nbsp;|&nbsp;管理 <span>></span>
+								人力&nbsp;|&nbsp;行政 &nbsp;|&nbsp;管理 <span></span>
 							</li>
 							<li class="type">
-								销售&nbsp;|&nbsp;客服  <span>></span>
+								销售&nbsp;|&nbsp;客服  <span></span>
 							</li>
 							<li class="type">
-								网络&nbsp;|&nbsp;电子 &nbsp;|&nbsp;通信<span>></span>
+								网络&nbsp;|&nbsp;电子 &nbsp;|&nbsp;通信<span></span>
 							</li>
 							<li class="type">
-								广告&nbsp;|&nbsp;设计 &nbsp;|&nbsp;市场<span>></span>
+								广告&nbsp;|&nbsp;设计 &nbsp;|&nbsp;市场<span></span>
 							</li>
 							<li class="type">
-								财会&nbsp;|&nbsp;金融 &nbsp;|&nbsp;保险 <span>></span>
+								财会&nbsp;|&nbsp;金融 &nbsp;|&nbsp;保险 <span></span>
 							</li>
 							<li class="type">
-								建筑&nbsp;|&nbsp;装修 &nbsp;|&nbsp;物业 <span>></span>
+								建筑&nbsp;|&nbsp;装修 &nbsp;|&nbsp;物业 <span></span>
 							</li>
 							<li class="type">
-								医疗&nbsp;|&nbsp;制药&nbsp;|&nbsp;环保<span>></span>
+								医疗&nbsp;|&nbsp;制药&nbsp;|&nbsp;环保<span></span>
 							</li>
 							<li class="type">
-								旅游&nbsp;|&nbsp;酒店  <span>></span>
+								旅游&nbsp;|&nbsp;酒店  <span></span>
 							</li>							
 						</ul>
 					</div>
@@ -159,7 +162,37 @@
 			</div>
 		</div>
 		
-		<!--底部开始-->
+		<div id="city">
+			<div id="del"></div>
+		</div>
+	</section>
+</script>
+
+<!--模板2:招聘模板-->
+<script type="text/template" id="tpl_list">
+	<section class="list-page">
+		<div class="">
+			我是模板2  招聘
+		</div>
+	</section>
+</script>
+
+<!--模板3:职业培训-->
+<script type="text/template" id="tpl_product">
+	<section class="product-page">
+		我是模板3  职业培训
+	</section>
+</script>
+
+
+<script type="text/template" id="tpl_employment">
+	<section class="employment-page">
+		我是模板4  就业指导
+	</section>
+</script>
+
+
+<!--底部开始-->
 		<div class="bottom">
 			<div class="B_center">
 					<div class="B_logo"></div>
@@ -176,26 +209,6 @@
 			</div>
 			<p>安全联盟&copy;2017Lagou京ICP备14023790号-2京公网安备11010802024043号</p>
 		</div>
-		
-		<div id="city">
-			<div id="del"></div>
-		</div>
-	</section>
-</script>
-
-<!--模板2-->
-<script type="text/template" id="tpl_list">
-	<section class="list-page">
-		
-	</section>
-</script>
-
-<!--模板3-->
-<script type="text/template" id="tpl_product">
-	<section class="product-page">
-		
-	</section>
-</script>
 
 <!--文件引用-->
 <script type="text/javascript" src="js/vue.js"></script>

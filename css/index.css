@@ -179,6 +179,14 @@ body{
 	float: left;
 }
 
+.type span{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-image: url(../img/chugao.png);
+	background-position: -300px -30px;
+}
+
 .mulu{
 width: 100%;
 height: auto;

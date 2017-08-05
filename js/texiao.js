@@ -4,7 +4,7 @@ window.onload = function  () {
 	var del = document.getElementById("del");
 	var adv = document.getElementById("adv");
 	var advs = document.getElementById("advs");
-	cut.onclick = function  () {
+	cut.onclick = function () {
 		city.style.display="block";
 	}
 	
