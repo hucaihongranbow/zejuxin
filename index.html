@@ -49,7 +49,7 @@
 			<div class="navgation">
 				<div class="nav_center">
 					<ul>
-						<a href="#home"><li>首页</li></a>
+						<a href="index.html"><li>首页</li></a>
 						<a href="#list"><li>招聘</li></a>
 						<a href="#product"><li>职业培训</li></a>
 						<a href="#employment"><li>就业指导</li></a>
@@ -61,7 +61,7 @@
 	<component v-bind:is="view"></component><!--挂载点-->
 </div>
 
-<!--模板1：首页内容-->
+<!--模板1：首页模板-->
 <script type="text/template" id="tpl_home">
 	<section class="home-page">
 		<div class="center">
@@ -171,9 +171,86 @@
 <!--模板2:招聘模板-->
 <script type="text/template" id="tpl_list">
 	<section class="list-page">
-		<div class="">
-			我是模板2  招聘
+		<div class="condition">
+			<ul>
+				<div>工作地点：</div>
+				<li>不限</li>
+				<li>全国</li>
+				<li>北京</li>
+				<li>上海</li>
+				<li>深圳</li>
+				<li>广州</li>
+				<li>杭州</li>
+				<li>成都</li>
+				<li>南京</li>
+				<li>武汉</li>
+				<li>西安</li>
+				<li>厦门</li>
+				<li>长沙</li>
+				<li>苏州</li>
+				<li>天津</li>
+				<li>贵阳</li>
+				<li>更多></li>
+			</ul><br/>
+			<ul>
+				<div style="margin-left: 63px;">行业：</div>
+				<li>IT/互联网</li>
+				<li>电子/通信/硬件</li>
+				<li>金融</li>
+				<li>交通/贸易/物流</li>
+				<li>消费品</li>
+				<li>机械/制造</li>
+				<li>能源/矿产环保</li>
+				<li>制药/医疗</li>
+				<li>专业服务</li><li style="width: 300px;"></li>
+				<li style="margin-left: 130px;">教育/培训</li>
+				<li>广告/媒体/娱乐出版</li>
+				<li>房地产/建筑</li>
+				<li>服务业</li>
+				<li>政府/非盈利机构/其他</li>
+			</ul><br /><br />
+			<ul>
+				<div>工作经验：</div>
+				<li>不限</li>
+				<li>硬件毕业生</li>
+				<li>3年及以下</li>
+				<li>3-5年</li>
+				<li>5-10年</li>
+				<li>10年以上</li>
+				<li>不要求</li>
+			</ul>
+			<br />
+			<ul>
+				<div>学历要求：</div>
+				<li>不限</li>
+				<li>大专</li>
+				<li>本科</li>
+				<li>硕士</li>
+				<li>博士</li>
+				<li>不要求</li>
+			</ul>
 		</div>
+		
+		<!--排序-->
+		<div class="sort">
+			<ul>
+				<div>排序方式：</div>
+				<li>默认</li>
+				<li>最新</li>
+				<li>月薪</li>
+				<li>不限</li>
+			</ul>
+			
+			<ul>
+				<div>工作性质：</div>
+				<li>不限</li>
+				<li>></li>
+			</ul>
+		</div>
+		
+		<ul class="firm">
+			<li v-for = "item in types"></li>
+		</ul>
 	</section>
 </script>
 

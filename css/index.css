@@ -436,7 +436,62 @@ height: auto;
 	background-image: url(../img/chugao.png);
 	background-position: -260px -33px;
 }
+/*首页结束*/
 
 
+/*组件2开始*/
 
+/*查找条件开始*/
+.condition{
+	width: 100%;
+	height: 209px;
+	border: solid 1px red;
+	margin-top: 32px;
+}
 
+.condition ul{
+	width: 100%;
+	height: 30px;
+	color: #000;
+}
+
+.condition ul li,.condition ul div{
+	float: left;
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+
+.condition ul div{
+	margin-left: 33px;
+	font-weight: bold;
+}
+.sort{
+	width: 100%;
+	height: 47px;
+	border: solid 1px gray;
+	margin-top: 27px;
+}
+
+.sort ul{
+	width: 100%;
+}
+
+.sort ul li,.sort ul div{
+	float: left;
+}
+
+.firm{
+	width: 100%;
+	height: 2385px;
+	border: solid 1px deepskyblue;
+	overflow: hidden;
+}
+
+.firm li{
+	width: 100%;
+	height: 135px;
+	margin-top: 20px;
+	border: solid 1px gainsboro;
+}
