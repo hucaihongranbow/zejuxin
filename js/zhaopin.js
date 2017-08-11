@@ -41,13 +41,24 @@ var Home = Vue.extend({
 	data: function () {
 		return {
 			types: [
-				{id: 1, title: '美食', url: '01.png'},
-				{id: 2, title: '电影', url: '02.png'},
-				{id: 3, title: '酒店', url: '03.png'},
-				{id: 4, title: '休闲娱乐', url: '04.png'},
-				{id: 5, title: '外卖', url: '05.png'},
-				{id: 6, title: 'KTV', url: '06.png'},
-				{id: 7, title: '周边游', url: '07.png'}
+				{value: '价格排序', key: 'price'},
+				{value: '销量排序', key: 'sales'},
+				{value: '好评排序', key: 'evaluate'},
+				{value: '优惠排序', key: 'discount'},
+				{value: '价格排序', key: 'price'},
+				{value: '销量排序', key: 'sales'},
+				{value: '好评排序', key: 'evaluate'},
+				{value: '优惠排序', key: 'discount'},
+				{value: '价格排序', key: 'price'},
+				{value: '销量排序', key: 'sales'},
+				{value: '好评排序', key: 'evaluate'},
+				{value: '优惠排序', key: 'discount'},
+				{value: '销量排序', key: 'sales'},
+				{value: '好评排序', key: 'evaluate'},
+				{value: '优惠排序', key: 'discount'},
+				{value: '销量排序', key: 'sales'},
+				{value: '好评排序', key: 'evaluate'},
+				{value: '优惠排序', key: 'discount'}
 			],
 			ad: [],
 			list: []
@@ -229,18 +240,32 @@ var app = new Vue({
 
 // 路由
 var route = function () {
+	// 每次当hash改变的时候，我们要将它获取出来，根据hash值来渲染页面
+	// #list\type\1 =》 list\type\1
+	// var hash = location.hash.slice(1);
 	var hash = location.hash;
+	// #\list\type\1 或者 #list\type\1 => list
+	// 处理字符串
 	hash = hash.slice(1).replace(/^\//, '');
+	// 将字符串转化成数组
 	hash = hash.split('/')
+
+	// 列表页失效问题产生的原因
+	// 当前页面的view组件是list(app.view)，搜索后得到的view组件还是list(hash[0])
 	if (app.view === hash[0] && hash[0] === 'list') {
+		// 父组件向子组件发送消息 成功通过父组件app向子组件发送消息
 		app.query = hash.slice(1)
 		app.$broadcast('reload-list')
 		return ;
 	}
+
+	// 根据hash值选择视图组件
 	app.query = hash.slice(1)
 	app.view = hash[0] || 'home';
 	
+	// console.log(111)
 }
 
+// 对hash改变注册事件
 window.addEventListener('hashchange', route)
 window.addEventListener('load', route)
