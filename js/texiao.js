@@ -46,7 +46,7 @@ window.onload = function  () {
     function animate(obj, target) {
         clearInterval(obj.timer);
         obj.timer = setInterval(function () {
-            var step = 150;
+            var step = 250;
             var step = obj.offsetLeft < target ? step : -step;
 
 

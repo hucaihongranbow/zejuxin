@@ -194,13 +194,17 @@ li{
 button{
     padding:5px;
     margin:5px;
+    background: none;
+    box-shadow: none;
+    border: none;
 }
 .active-nick{
     color:red;
 }
-input{
+.page-ipt-nick{
     width:50px;
     text-align:center;
+    border: none;
 }
 
 .pagination-nick{
@@ -219,4 +223,12 @@ input{
 .btn-box-nick{
 	width: auto;
     text-align: center;
+}
+
+#er,#er1,#er2,#er3,#er4,#er5,#er6{
+	width: 100px;
+	height: 30px;
+	border: solid 1px red;
+	float: left;
+	margin-left: 10px;
 }

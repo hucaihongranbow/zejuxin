@@ -260,7 +260,7 @@ height: auto;
 }
 
 .screen li {
-    width: 768px;
+    width: 755px;
     height: 100%;
     overflow: hidden;
     float: left;
@@ -275,7 +275,8 @@ height: auto;
 }
 
 .screen li img{
-	width: 100%;
+	width: 755px;
+	height: 305px;
 }
 
 .title{

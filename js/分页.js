@@ -10,7 +10,7 @@ $(document).ready(function  () {
                 ipt:'',//input class-- 必填
                 goBtn:'',//go btn class --必填
                 currentBtn:'',//当前按钮class name --必填
-                pageCount:15,//每页显示几条数据
+                pageCount:20,//每页显示几条数据
                 numBtnCount:3,//当前页左右两边各多少个数字按钮
                 currentPage:0,//当前页码data-page，首屏默认值
                 maxCount:0,//ajax请求数据分成的最大页码
@@ -20,8 +20,65 @@ $(document).ready(function  () {
             //请求数据页面跳转方法
             function goPage(btn){
                 //obj为ajax请求数据
-                var obj={other:{},
-                value:[00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00,00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00,11,22,33,44,55,66,77,88,99,00]};
+                var obj={
+                other:{},
+                value:                                                                                                               [
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                 {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                 {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":22,"key2":33,"key3":44,"key4":55,"key5":66,"key6":77,"key7":88}
+                ]};
                 //将展示的数据赋值给pager.data  (array)
                 pager.data=obj.value;
                 //设置ajax请求数据分成的最大页码
@@ -60,14 +117,14 @@ $(document).ready(function  () {
                 arr=pager.data.slice(pager.pageCount*pager.currentPage,
                         pager.data.length - pager.pageCount*(pager.currentPage+1) > -1 ?
                         pager.pageCount*(pager.currentPage+1) : pager.data.length);
-                arr.forEach(function(v){  //传几个参数调用数组中的数据
-                    str+='<div>'+v+'</div>';
-                });
+                arr.forEach(function(value){  //传参数调用数组中的数据
+                    str+='<div><div id = "er">'+value.key1+'</div><div id = "er1">'+value.key2+'</div><div id = "er2">'+value.key3+'</div><div id = "er3">'+value.key4+'</div><div id = "er4">'+value.key5+'</div><div id = "er5">'+value.key6+'</div><div id = "er6">'+value.key7+'</div></div>';
+                }); 
                 $('.'+pager.mainBox).html(str);
             }
             //创建非数字按钮和数据内容区
             function createOtherBtn(){
-                $('.'+pager.paginationBox).html('<div class="'+pager.mainBox+'"></div> <div class="'+pager.btnBox+'"><button data-page="first" class="first-btn">首页</button><button data-page="prev" class="prev-btn">上一页</button><span class="'+pager.numBtnBox+'"></span><button data-page="next" class="next-btn">下一页</button><input type="text" placeholder="请输入页码" class="'+pager.ipt+'"><button class="'+pager.goBtn+'">确定go</button><button data-page="last" class="last-btn">尾页</button></div>');
+                $('.'+pager.paginationBox).html('<div class="'+pager.mainBox+'"></div> <div class="'+pager.btnBox+'"><button data-page="first" class="first-btn">首页</button><button data-page="prev" class="prev-btn">上一页</button><span class="'+pager.numBtnBox+'"></span><button data-page="next" class="next-btn">下一页</button><input type="text" placeholder="请输入页码" class="'+pager.ipt+'"><button class="'+pager.goBtn+'">确定</button><button data-page="last" class="last-btn">尾页</button></div>');
                 //ipt value变化并赋值给go btn data-page
                 $('.'+pager.btnBox+' .'+pager.ipt).change(function(){
                     if(!isNaN($(this).val())){//是数字
