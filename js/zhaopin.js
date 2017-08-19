@@ -1,271 +1,245 @@
-var Util = {
-	// 获取模板内容
-	tpl: function (id) {
-		return document.getElementById(id).innerHTML;
-	},
-	// 异步请求方法
-	ajax: function (url, fn) {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				if (xhr.status === 200 || xhr.status === 304) {
-					fn && fn(xhr.responseText)
-				}
-			}
-		};
-		xhr.open('GET', url, true);
-		xhr.send();
-	}
-}
+$(document).ready(function  () {
+	//        定义一个分页方法，可多次调用
+        function paginationNick(opt){
+//            参数设置
+            var pager={
+                paginationBox:'',//分页容器-- 必填
+                mainBox:'',//内容盒子--必填
+                numBtnBox:'',//数字按钮盒子-- 必填
+                btnBox:'',//按钮盒子 --必填
+                ipt:'',//input class-- 必填
+                goBtn:'',//go btn class --必填
+                currentBtn:'',//当前按钮class name --必填
+                pageCount:20,//每页显示几条数据
+                numBtnCount:3,//当前页左右两边各多少个数字按钮
+                currentPage:0,//当前页码data-page，首屏默认值
+                maxCount:0,//ajax请求数据分成的最大页码
+                data:[]//ajax请求的数据
+            };
+            pager = $.extend(pager,opt);
+            //请求数据页面跳转方法
+            function goPage(btn){
+                //obj为ajax请求数据
+                var obj={
+                other:{},
+                value:                                                                                                               [
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                 {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                 {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":00},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":33,"key2":44,"key3":55,"key4":66,"key5":77,"key6":88,"key7":99},
+                {"key1":00,"key2":11,"key3":22,"key4":33,"key5":44,"key6":55,"key7":66},
+                {"key1":77,"key2":88,"key3":99,"key4":00,"key5":11,"key6":22,"key7":33},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":11,"key2":22,"key3":33,"key4":44,"key5":55,"key6":66,"key7":77},
+                {"key1":99,"key2":00,"key3":11,"key4":22,"key5":33,"key6":44,"key7":55},
+                {"key1":66,"key2":77,"key3":88,"key4":99,"key5":00,"key6":11,"key7":22},
+                {"key1":44,"key2":55,"key3":66,"key4":77,"key5":88,"key6":99,"key7":00},
+                {"key1":22,"key2":33,"key3":44,"key4":55,"key5":66,"key6":77,"key7":88}
+                ]};
+                //将展示的数据赋值给pager.data  (array)
+                pager.data=obj.value;
+                //设置ajax请求数据分成的最大页码
+                pager.maxCount=pager.data.length % pager.pageCount ? parseInt(pager.data.length / pager.pageCount) +1 :
+                    pager.data.length / pager.pageCount;
 
-// 处理价格的过滤器
-Vue.filter('price', function (value) {
-	return value + '元'
+//                设置当前页码
+                if(!isNaN(btn)){//数字按钮
+                    pager.currentPage=parseInt(btn);
+                }else{
+                    switch(btn){
+                        case 'first':
+                            pager.currentPage=0;
+                            break;
+                        case 'prev':
+                            if(pager.currentPage>0){
+                                --pager.currentPage;
+                            }
+                            break;
+                        case 'next':
+                            if(pager.currentPage+1<pager.maxCount){
+                                ++pager.currentPage;
+                            }
+                            break;
+                        case 'last':
+                            pager.currentPage=pager.maxCount-1;
+                            break;
+                    }
+                }
+                //创建数字按钮
+                createNumBtn(pager.currentPage);
+                //赋值给页码跳转输入框的value，表示当前页码
+                $('.'+pager.btnBox+' .'+pager.ipt).val(pager.currentPage+1);
+//              内容区填充数据
+                var arr=[],str='';
+                arr=pager.data.slice(pager.pageCount*pager.currentPage,
+                        pager.data.length - pager.pageCount*(pager.currentPage+1) > -1 ?
+                        pager.pageCount*(pager.currentPage+1) : pager.data.length);
+                arr.forEach(function(value){  //传参数调用数组中的数据
+                    str+='<div><div id = "er">'+value.key1+'</div><div id = "er1">'+value.key2+'</div><div id = "er2">'+value.key3+'</div><div id = "er3">'+value.key4+'</div><div id = "er4">'+value.key5+'</div><div id = "er5">'+value.key6+'</div><div id = "er6">'+value.key7+'</div></div>';
+                }); 
+                $('.'+pager.mainBox).html(str);
+            }
+            //创建非数字按钮和数据内容区
+            function createOtherBtn(){
+                $('.'+pager.paginationBox).html('<div class="'+pager.mainBox+'"></div> <div class="'+pager.btnBox+'"><button data-page="first" class="first-btn">首页</button><button data-page="prev" class="prev-btn">上一页</button><span class="'+pager.numBtnBox+'"></span><button data-page="next" class="next-btn">下一页</button><input type="text" placeholder="请输入页码" class="'+pager.ipt+'"><button class="'+pager.goBtn+'">确定</button><button data-page="last" class="last-btn">尾页</button></div>');
+                //ipt value变化并赋值给go btn data-page
+                $('.'+pager.btnBox+' .'+pager.ipt).change(function(){
+                    if(!isNaN($(this).val())){//是数字
+                        if($(this).val() > pager.maxCount){//限制value最大值，跳转尾页
+                            $(this).val(pager.maxCount);
+                        }
+                        if($(this).val()<1){//限制value最小值，跳转首页
+                            $(this).val(1);
+                        }
+                    }else{//非数字清空value
+                        $(this).val('');
+                    }
+                    $('.'+pager.btnBox+' .'+pager.goBtn).attr('data-page',$(this).val() ? $(this).val()-1 : '');
+                });
+                //每个btn绑定请求数据页面跳转方法
+                $('.'+pager.btnBox+' button').each(function(i,v){
+                    $(this).click(function(){
+                        //有值且不是上一次的页码时才调用
+                        if(v.getAttribute('data-page') && v.getAttribute('data-page') != pager.currentPage){
+                            goPage(v.getAttribute('data-page'));
+                        }
+                    });
+                });
+            }
+            //创建数字按钮
+            function createNumBtn(page){
+                //page是页面index从0开始，这里的page加减一要注意
+                var str='';
+                if(pager.maxCount>pager.numBtnCount*2){//若最大页码数大于等于固定数字按钮总数（pager.numBtnCount*2+1）时
+                    //此页左边右边各pager.numBtnCount个数字按钮
+                    if(page-pager.numBtnCount>-1){//此页左边有pager.numBtnCount页 page页码从0开始
+                        for(var m=pager.numBtnCount;m>0;m--){
+                            str+='<button data-page="'+(page-m)+'">'+(page-m+1)+'</button>';
+                        }
+                    }else{
+                        for(var k=0;k<page;k++){
+                            str+='<button data-page="'+k+'">'+(k+1)+'</button>';
+                        }
+                    }
+                    str+='<button data-page="'+page+'" class="'+pager.currentBtn+'" disabled="disabled">'+(page+1)+'</button>';//此页
+                    if(pager.maxCount-page>3){//此页右边有pager.numBtnCount页 page页码从0开始
+                        for(var j=1;j<pager.numBtnCount+1;j++){
+                            str+='<button data-page="'+(page+j)+'">'+(page+j+1)+'</button>';
+                        }
+                    }else{
+                        for(var i=page+1;i<pager.maxCount;i++){
+                            str+='<button data-page="'+i+'">'+(i+1)+'</button>';
+                        }
+                    }
+                    /*数字按钮总数小于固定的数字按钮总数pager.numBtnCount*2+1时，
+                     这个分支，可以省略*/
+                    if(str.match(/<\/button>/ig).length<pager.numBtnCount*2+1){
+                        str='';
+                        if(page<pager.numBtnCount){//此页左边页码少于固定按钮数时
+                            for(var n=0;n<page;n++){//此页左边
+                                str+='<button data-page="'+n+'">'+(n+1)+'</button>';
+                            }
+                            str+='<button data-page="'+page+'" class="'+pager.currentBtn+'" disabled="disabled">'+(page+1)+'</button>';//此页
+                            for(var x=1;x<pager.numBtnCount*2+1-page;x++){//此页右边
+                                str+='<button data-page="'+(page+x)+'">'+(page+x+1)+'</button>';
+                            }
+                        }
+                        if(pager.maxCount-page-1<pager.numBtnCount){
+                            for(var y=pager.numBtnCount*2-(pager.maxCount-page-1);y>0;y--){//此页左边
+                                str+='<button data-page="'+(page-y)+'">'+(page-y+1)+'</button>';
+                            }
+                            str+='<button data-page="'+page+'" class="'+pager.currentBtn+'" disabled="disabled">'+(page+1)+'</button>';//此页
+                            for(var z=page+1;z<pager.maxCount;z++){//此页右边
+                                str+='<button data-page="'+z+'">'+(z+1)+'</button>';
+                            }
+                        }
+                    }
+                }else{
+                    str='';
+                    for(var n=0;n<page;n++){//此页左边
+                        str+='<button data-page="'+n+'">'+(n+1)+'</button>';
+                    }
+                    str+='<button data-page="'+page+'" class="'+pager.currentBtn+'" disabled="disabled">'+(page+1)+'</button>';//此页
+                    for(var x=1;x<pager.maxCount-page;x++){//此页右边
+                        str+='<button data-page="'+(page+x)+'">'+(page+x+1)+'</button>';
+                    }
+                }
+
+                $('.'+pager.numBtnBox).html(str);
+              //每个btn绑定请求数据页面跳转方法
+                $('.'+pager.numBtnBox+' button').each(function(i,v){
+                    $(this).click(function(){
+                        goPage(v.getAttribute('data-page'));
+                    });
+                });
+
+                //按钮禁用
+                $('.'+pager.btnBox+' button').not('.'+pager.currentBtn).attr('disabled',false);
+                if(!page){//首页时
+                    $('.'+pager.btnBox+' .first-btn').attr('disabled',true);
+                    $('.'+pager.btnBox+' .prev-btn').attr('disabled','disabled');
+                }
+                if(page==pager.maxCount-1){//尾页时
+                    $('.'+pager.btnBox+' .last-btn').attr('disabled',true);
+                    $('.'+pager.btnBox+' .next-btn').attr('disabled',true);
+                }
+            }
+
+            //首屏加载
+            createOtherBtn();//首屏加载一次非数字按钮即可
+            goPage();//请求数据页面跳转满足条件按钮点击都执行，首屏默认跳转到currentPage
+        }
+        //调用
+        paginationNick({
+            paginationBox:'pagination-nick',//分页容器--必填
+            mainBox:'main-box-nick',//内容盒子--必填
+            numBtnBox:'num-box-nick',//数字按钮盒子-- 必填
+            btnBox:'btn-box-nick',//按钮盒子 --必填
+            ipt:'page-ipt-nick',//input class-- 必填
+            goBtn:'go-btn-nick',//go btn class --必填
+            currentBtn:'active-nick'//当前按钮class name --必填
+        });
 })
-// 处理门市价的过滤器
-Vue.filter('orignPrice', function (value) {
-	return '门市价:' + value + '元';
-})
-// 处理销售过滤器
-Vue.filter('sales', function (value) {
-	return '已售' + value;
-})
-// 处理显示更过过滤器
-Vue.filter('loadMore', function (value) {
-	return '查看其他' + value + '条团购'
-})
-
-/* 首页组件 */
-var Home = Vue.extend({
-	template: Util.tpl('tpl_home'),
-	data: function () {
-		return {
-			types: [
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'}
-			],
-			ad: [],
-			list: []
-		}
-	},
-	// 组件创建后执行
-	created: function () {
-		// 显示搜索框
-		this.$parent.hideSearch = true;
-		var that = this;
-		Util.ajax('data/home.json', function (res) {
-			// 将返回的数据转化为json
-			res = JSON.parse(res);
-			if (res.errno === 0) {
-				// 添加广告数据
-				that.$set('ad', res.data.ad)
-				// 添加列表数据
-				that.$set('list', res.data.list)
-			}
-			
-		})
-	}
-})
-
-/* 招聘页组件 */
-var List = Vue.extend({
-	template: Util.tpl('tpl_list'),
-	data: function () {
-		return {
-			types: [
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '价格排序', key: 'price'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'},
-				{value: '销量排序', key: 'sales'},
-				{value: '好评排序', key: 'evaluate'},
-				{value: '优惠排序', key: 'discount'}
-			],
-			// 显示商品列表
-			list: [],
-			// 剩余商品列表
-			other: []
-		}
-	},
-	events: {
-		'reload-list': function () {
-			this.load();
-		}
-	},
-	// 组件创建后执行
-	created: function () {
-		// 显示搜索框
-		this.$parent.hideSearch = true;
-		this.load();
-	},
-	methods: {
-		// 将请求数据的逻辑封装在里面
-		load: function () {
-			var that = this;
-			// 通过parent的query数据我们可以拿到hash上的信息，来拼凑请求query
-			var query = that.$parent.query;
-			// 拼凑query字符串
-			var queryStr = '';
-			if (query && query.length === 2) {
-				queryStr = '?' + query[0] + '=' + query[1]
-			}
-			// 请求列表数据渲染到页面中
-			Util.ajax('data/list.json' + queryStr, function (res) {
-				// 将res转化成js对象
-				res = JSON.parse(res);
-				if (res.errno === 0) {
-					// 打乱返回数据的顺序
-					res.data.sort(function () {
-						return Math.random() > .5 ? 1 : -1;
-					})
-					// 将前三个保存在list中
-					that.$set('list', res.data.slice(0, 3))
-					// 后面的保存在ohter
-					that.$set('other', res.data.slice(3))
-				}
-			})
-		},
-		// 为查看更多按钮绑定事件
-		loadMore: function () {
-			// 把剩余ohter的商品放到list
-			this.list = [].concat(this.list, this.other);
-			// 将ohter清空
-			this.other = [];
-		},
-		// 点击排序按钮，对list排序
-		// price sales evaluate 这三个属性，是list列表中每个成员对象中属性，所以我们可以根据该属性对列表成员排序
-		sortBy: function (key) {
-			this.list.sort(function (a, b) {
-				// a ,b 表示list数组中成员，所以该成员句该key属性
-				if (key === 'discount') {
-					// 用原价减去售价排序
-					return (b.orignPrice - b.price) - (a.orignPrice - a.price)	
-				} else {
-					// 由小到大排序
-					// return a[key] - b[key]
-					// 由大到小排序
-					return b[key] - a[key]
-				}
-			})
-		}
-	}
-})
-
-/* 职业培训组件 */
-var Product = Vue.extend({
-	template: Util.tpl('tpl_product'),
-	data: function () {
-		return {
-			// 我们请求数据data是个对象，不是数组，所以我们给product定义为一个对象
-			product: {
-				src: '01.jpg'
-			}
-		}
-	},
-	created: function () {
-		var that = this;
-		// hideSearch 设置成false来隐藏search元素
-		this.$parent.hideSearch = false;
-		Util.ajax('data/product.json', function (res) {
-			// 将res字符串转化成对象
-			res = JSON.parse(res);
-			if (res.errno === 0) {
-				// 将res的data数据保存在product变量中
-				that.$set('product', res.data)
-			}
-		})
-	}
-})
-
-var Employment = Vue.extend({
-	template:Util.tpl('tpl_employment'),
-	data:function () {
-		return {
-			
-		}
-	}
-})
-
-Vue.component('home', Home)
-Vue.component('list', List)
-Vue.component('product', Product)
-Vue.component('employment',Employment)
-
-var app = new Vue({
-	el: '#app',
-	data: {
-		view: '',
-		// 存储哈希中信息的
-		query: [],
-		hideSearch: true
-	},
-	methods: {
-		// 为搜索框绑定搜索事件
-		search: function (e) {
-			// 通过当前对象获取搜索框的数据
-			var value = e.target.value;
-			// 将value放在hash #list/search/value
-			location.hash = '#list/search/' + value;
-			// console.log(value)
-		}
-	}
-})
-
-// 路由
-var route = function () {
-	// 每次当hash改变的时候，我们要将它获取出来，根据hash值来渲染页面
-	// #list\type\1 =》 list\type\1
-	// var hash = location.hash.slice(1);
-	var hash = location.hash;
-	// #\list\type\1 或者 #list\type\1 => list
-	// 处理字符串
-	hash = hash.slice(1).replace(/^\//, '');
-	// 将字符串转化成数组
-	hash = hash.split('/')
-
-	// 列表页失效问题产生的原因
-	// 当前页面的view组件是list(app.view)，搜索后得到的view组件还是list(hash[0])
-	if (app.view === hash[0] && hash[0] === 'list') {
-		// 父组件向子组件发送消息 成功通过父组件app向子组件发送消息
-		app.query = hash.slice(1)
-		app.$broadcast('reload-list')
-		return ;
-	}
-
-	// 根据hash值选择视图组件
-	app.query = hash.slice(1)
-	app.view = hash[0] || 'home';
-	
-	// console.log(111)
-}
-
-// 对hash改变注册事件
-window.addEventListener('hashchange', route)
-window.addEventListener('load', route)

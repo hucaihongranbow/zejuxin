@@ -18,23 +18,6 @@ var Util = {
 	}
 }
 
-// 处理价格的过滤器
-Vue.filter('price', function (value) {
-	return value + '元'
-})
-// 处理门市价的过滤器
-Vue.filter('orignPrice', function (value) {
-	return '门市价:' + value + '元';
-})
-// 处理销售过滤器
-Vue.filter('sales', function (value) {
-	return '已售' + value;
-})
-// 处理显示更过过滤器
-Vue.filter('loadMore', function (value) {
-	return '查看其他' + value + '条团购'
-})
-
 /* 首页组件 */
 var Home = Vue.extend({
 	template: Util.tpl('tpl_home'),
@@ -197,7 +180,15 @@ var Employment = Vue.extend({
 	template:Util.tpl('tpl_employment'),
 	data:function () {
 		return {
-			
+			types: [
+				{id: 1, title: '美食', url: '01.png'},
+				{id: 2, title: '电影', url: '02.png'},
+				{id: 3, title: '酒店', url: '03.png'},
+				{id: 4, title: '休闲娱乐', url: '04.png'},
+				{id: 5, title: '外卖', url: '05.png'},
+				{id: 6, title: 'KTV', url: '06.png'},
+				{id: 7, title: '周边游', url: '07.png'}
+			],
 		}
 	}
 })
