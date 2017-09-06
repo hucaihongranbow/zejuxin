@@ -1,0 +1,299 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html{
+	width: 100%;
+	height: auto;
+}
+
+body{
+	width: 100%;
+	height: auto;
+	font-family: "microsoft yahei";
+}
+
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+
+/*初始化结束*/
+        
+.T_left,.shouji,.T_right{
+	float: left;
+	line-height: 30px;
+}
+.top{
+	width: 100%;
+	height: 30px;
+	color: white;
+	background-color: rgb(51,51,51);
+}
+
+.shouji{
+    width: 35px;
+    height: 100%;
+    margin-left: 33px;
+    background-image: url(../img/chugao.png);
+    background-position: -163px -33px;
+}
+
+.T_left{
+	width: 170px;
+	height: 100%;
+}
+
+.T_right{
+	width: 120px;
+	height: 100%;
+	float: right;
+	cursor: pointer;
+}
+/*头部结束*/
+
+.nav{
+	width: 100%;
+	height: 109px;
+	border-bottom: solid 1px darkgray;
+}
+
+.N_center{
+	width: 964px;
+	height: 79px;
+	margin: 0 auto;
+}
+
+.logo{
+	width: 137px;
+	height: 60px;
+	border: solid deepskyblue 1px;
+	border-radius: 5px;
+	float: left;
+	margin: 10px;
+	margin-right: 12px;
+}
+
+.select{
+	width: 800px;
+	height: 60px;
+	float: left;
+	margin-top: 10px;
+}
+
+.didian{
+	width: 60px;
+	height: 25px;
+	font-size: 20px;
+	margin-top: 14.5px;
+	float: left;
+	color: #010101;
+}
+
+.qiehuan{
+	width: 80px;
+	height: 14px;
+	float: left;
+	margin: 22px 0 0 25px;
+	cursor: pointer;
+}
+
+.seach{
+	width: 524px;
+	height: 36px;
+	float: right;
+	margin-top: 2px;
+	border: 1px solid gainsboro;
+}
+
+.seach input{
+	width: 420px;
+    height: 35px;
+    border: none;
+}
+
+.sousuo{
+	width: 103px;
+	height: 36px;
+	background: gainsboro;
+	float: right;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	line-height: 36px;
+	cursor: pointer;
+}
+
+.S_con{
+	width: 524px;
+    height: 25px;
+    float: left;
+    margin-left: 275px;
+}
+
+.navgation{
+	width: 100%;
+	height: 29px;
+}
+
+.nav_center{
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 22px;
+}
+.nav_center ul li{
+	width: auto;
+	height: auto;
+	float: left;
+	margin-left: 80px;
+	cursor: pointer;
+}
+/*导航结束*/
+
+/*查找条件开始*/
+.content{
+	width: 1037px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.condition{
+	width: 100%;
+	height: 209px;
+	border: solid 1px gainsboro;
+	margin-top: 32px;
+}
+
+.condition ul{
+	width: 100%;
+	height: 30px;
+	color: #000;
+}
+
+.condition ul li,.condition ul div{
+	float: left;
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+	
+}
+.condition ul li{
+	font-size: 14px;
+}
+
+.condition ul div{
+	margin-left: 33px;
+	font-weight: bold;
+}
+.sort{
+	width: 100%;
+	height: 47px;
+	border: solid 1px gainsboro;
+	margin-top: 27px;
+	line-height: 47px;
+}
+
+.sort ul{
+	width: 100%;
+}
+
+.sort ul li,.sort ul div,.sort ul select{
+	float: left;
+	margin-left: 21px;
+}
+.glass,.sort ul select{
+	margin: 0;
+}
+
+.sort ul select{
+	margin-top: 16px;
+	border: none;
+}
+/*内容区开始*/
+button{
+    padding:5px;
+    margin:5px;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+.active-nick{
+    color:red;
+}
+.page-ipt-nick{
+    width:50px;
+    text-align:center;
+    border: none;
+}
+
+.pagination-nick{
+	height:auto;
+	position: relative;
+	
+}
+
+.main-box-nick div{
+	width: 100%;
+	height: 135px;
+	margin-top: 10px;
+	border: solid 1px gainsboro;
+}
+
+.btn-box-nick{
+	width: auto;
+    text-align: center;
+}
+
+#er,#ers{
+width: 48%;
+height: 100%;
+float: left;
+margin: 0;
+border: none;	
+}
+
+#ers{
+	float: right;
+	position: relative;
+}
+
+#er1,#er2,#er3,#er4,#er5,#er6,#er7,#er8,#er9,#er10,#er11,#er12{
+	width: auto;
+	height: 30px;
+	border: none;
+	float: left;
+	margin-left: 10px;
+	font-size: 14px;
+	color: #000000;
+}
+
+#er1,#er8{
+	font-size: 18px;
+	color: #7c0000;
+}
+
+#er5,#er6,#er7{
+	width: auto;
+	height: auto;
+	padding: 3px;
+	font-size: 12px;
+	color: #0b0b0b;
+	border: solid gainsboro 1px;
+}
+
+#er2{
+	margin-left: 76px;
+}
+
+#er12{
+	width: 72px;
+	height: 72px;
+	border: solid 1px red;
+	position: absolute;
+	top: 20px;
+	right: 50px;
+}
