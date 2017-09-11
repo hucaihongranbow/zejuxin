@@ -1,0 +1,96 @@
+.content{
+	height: 1419px;
+}
+
+.rate li:nth-child(2) div:nth-child(1) {
+    color: rgb(0,160,233);
+}
+
+.rate li:nth-child(2) div:nth-child(2){
+    background-position: -13px -324px;
+}
+
+.tishi{
+	width: 88%;
+	color: red;
+	margin-top: 38px;
+	padding-left: 12%;
+	height: auto;
+}
+
+.name_s .biaodan{
+	width: 100%;
+	height: auto;
+	margin: 10px 0 18px 0;
+}
+
+.name_s .biaodan span{
+    top: 3px;
+}
+
+.name_s .biaodan input{
+    top: 0px;
+}
+
+.license{
+	width: 100%;
+	height: 200px;
+}
+
+.license .biaodan{
+	margin-top: 4px;
+}
+
+.license .licen{
+	width: 179px;
+	height: 110px;
+	color: #76eaf0;
+	border: dashed 1px #76eaf0;
+	left: 265px;
+	top: -5px;
+}
+
+.license .upload{
+	width: 100%;
+	height: 30px;
+	top: 10px;
+}
+
+.license .upload span{
+	display: inline-block;
+	top: -10px;
+	font-size: 14px;
+	color: #1470ba;
+	margin-right: 10px;
+	margin-left: 0;
+}
+
+.license .upload span:nth-child(1){
+	width: 21px;
+    height: 100%;
+    top: 0;
+    margin-left: 262px;
+    background-image: url(../img/qy1.png);
+    background-position: -260px -63px;
+}
+
+.name_s textarea{
+	width: 731px;
+	height: 287px;
+}
+
+.pre{
+	width: 87px;
+	height: 39px;
+	border: darkgray solid 1px;
+    top: 1109px;
+    left: 340px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.click{
+	left: 460px;
+}
+

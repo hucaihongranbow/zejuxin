@@ -18,14 +18,15 @@ li{
 
 html{
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 body{
 	width: 100%;
-	height: 100%;
+	height: auto;
 	margin: 0 auto;
 	border: solid 1px red;
+	background-color: rgb(243,244,248);
 	font-family: "microsoft yahei";
 	color: #909090;
 }
@@ -63,7 +64,8 @@ body{
 	height: 100%;
 	float: left;
 	margin-right: 70px;
-	border: solid 1px white;
+	background-image: url(../img/qy1.png);
+	background-position: -13px -9px;
 }
 
 .nav .sigin li{
@@ -72,27 +74,184 @@ body{
 
 .content{
 	width: 90%;
-	height: 1000px;
-	border: solid 1px blueviolet;
+	height: 1050px;
 	margin:  0 auto;
+	margin-top: 30px;
 }
 
 .content_l,.content_r{
 	float: left;
-	border: solid 1px yellowgreen;
 }
 
 .content_l{
-	width: 845px;
-	height: 900px;
-	margin-right: 17px;
+	width: 885px;
+	height: auto;
+	margin-right: 25px;
+}
+
+.banner,.resume,.filtrate,.recommend{
+	width: 100%;
+	position: relative;
+}
+
+.banner{
+	height: 85px;
+	background-color: yellowgreen;
+	margin-bottom: 13px;
+}
+
+.resume{
+	height: 115px;
+	background-color: white;
+	margin-bottom: 23px;
+}
+
+.resume>div{
+	width: 187px;
+	height: 100%;
+	float: left;
+	margin-left: 45px;
+	position: relative;
+}
+
+.resume>div div:nth-child(1){
+	width: 37px;
+	height: 42px;
+	position: absolute;
+	left: 15px;
+	top: 36px;
+	background-image: url(../img/qy1.png);
+}
+
+.resume>div div:nth-child(2){
+	width: auto;
+	height: auto;
+	position: absolute;
+	left: 65px;
+	top: 36px;
+}
+.resume>div div:nth-child(3){
+	width: 131px;
+	height: auto;
+	position: absolute;
+	left: 65px;
+	top: 58px;
+	color: rgb(14,126,246);
+}
+
+.resume>div div:nth-child(3) span,.filtrate>div div:nth-child(2) span{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url(../img/qy1.png);
+	background-position: -100px -19px;
+	position: absolute;
+	top: 3px;
+	right: 5px;
+}
+
+#add{
+	left: 75px;
+	top: 20px;
+}
+
+#adds{
+	left: 65px;
+	top: 70px;
+	color: rgb(14,126,246);
+}
+
+.filtrate{
+	height: 370px;
+	background-color: white;
+	margin-bottom: 34px;
+}
+
+.filtrate .filtre_t{
+	width: 100%;
+	height: 47px;
+	line-height: 47px;
+	border-bottom: solid 1px gray;
+}
+
+.filtrate .filtre_t div:nth-child(1),.recommend .recom_t div:nth-child(1){
+	float: left;
+	margin-left: 52px;
+}
+
+.filtrate .filtre_t div:nth-child(2),.recommend .recom_t div:nth-child(2){
+	float: right;
+	margin-right: 21px;
+	color: rgb(14,126,246);
+}
+
+.filtrate .filtre_t div:nth-child(2) span{
+	top: 16px;
+	right: inherit;
+}
+
+.recommend{
+	height: 357px;
+	background-color: white;
+	margin-bottom: 50px;
+}
+
+.recommend .recom_t{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background-color: rgb(243,244,248);
+}
+
+.recommend .recom_t div:nth-child(1){
+	margin-left: 10px;
+}
+
+.recommend .recom_t div:nth-child(2){
+	margin-right: 15px;
+}
+
+.recommend .recom_t div:nth-child(1) span{
+	display: inline-block;
+	width: 22px;
+	height: 20px;
+	margin-right: 5px;
+	background-image: url(../img/qy1.png);
+	background-position: -223px -68px;
+	position: relative;
+	top: 3px;
+}
+
+.recommend .recom_t div:nth-child(2) span{
+	display: inline-block;
+	width: 25px;
+	height: 20px;
+	margin-right: 5px;
+	background-image: url(../img/qy1.png);
+	background-position: -166px -66px;
+	position: relative;
+	top: 2px;
 }
 
 .content_r{
-	width: 276px;
-	height: 500px;
+	width: 300px;
+	height: auto;
 }
 
+.content_rt{
+	width: 100%;
+	height: 211px;
+	background-color: white;
+	margin-bottom: 23px;
+	position: relative;
+}
+
+.content_rb{
+	width: 100%;
+	height: 370px;
+	background-color: white;
+	position: relative;
+}
 /*底部开始*/
 .bottom{
 	width: 100%;

@@ -1,0 +1,345 @@
+* {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+html{
+	width: 100%;
+	height: auto;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+li{
+	list-style: none;
+}
+
+html{
+	width: 100%;
+	height: auto;
+}
+
+body{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border: solid 1px red;
+	background-color: rgb(243,244,248);
+	font-family: "microsoft yahei";
+	color: #909090;
+}
+
+.nav{
+	width: 100%;
+	height: 35px;
+	color: white;
+	background: rgb(51,51,51);
+}
+
+.nav .name,.nav ul,.nav ul li{
+	float: left;
+	height: 100%;
+	line-height: 35px;
+}
+
+.nav .name{
+	margin:0 90px 0 100px;
+}
+
+.nav ul li{
+	margin-right: 70px;
+}
+
+.nav .sigin{
+	float: right;
+	width: auto;
+	height: 100%;
+	margin-right: 40px;
+}
+
+.nav .sigin .bell{
+	width: 20px;
+	height: 100%;
+	float: left;
+	margin-right: 70px;
+	background-image: url(../img/qy1.png);
+	background-position: -13px -9px;
+}
+
+.nav .sigin li{
+	margin-right: 30px;
+}
+/*导航结束*/
+
+/*内容区开始*/
+.content{
+	width: 1100px;
+	height: 3200px;
+	/*border: solid 1px lawngreen;*/
+	margin: 0 auto;
+	position: relative;
+}
+
+.input{
+	width: 731px;
+	height: 42px;
+	line-height: 39px;
+	background-color: #00a0e9;
+	margin: 55px 0 20px 327px;
+}
+
+.input input{
+	width: 596px;
+	height: 34px;
+	font-size: 18px;
+	padding-left: 4px;
+	margin-left: 2px;
+}
+
+.seach{
+	width: 123px;
+	height: 100%;
+	line-height: 42px;
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	float: right;
+}
+
+.seach_r{
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 359px;
+}
+
+.seach_r span{
+	margin-right: 15px;
+}
+
+.xinxi{
+	width: 1098px;
+	height: 185px;
+	margin: 0 auto;
+	background-color: white;
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+
+.xinxi ul{
+	width: 366px;
+	height: 100%;
+	float: left;
+}
+
+.xinxi ul input{
+	width: 50px;
+	text-align: center;
+}
+
+.select{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: white;
+	border-bottom: solid 1px grey;
+}
+
+.select input,.select span{
+	position: relative;
+	left: 650px;
+}
+
+.sel{
+	display: inline-block;
+	width: 25px;
+	height: 22px;
+	background-image: url(../img/qy1.png);
+	background-position: -330px -16px;
+	top: 6px;
+}
+
+.sels{
+	background-position: -362px -16px;
+}
+
+button{
+    padding:5px;
+    margin:5px;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+.active-nick{
+    color:red;
+}
+.page-ipt-nick{
+    width:50px;
+    text-align:center;
+    border: none;
+}
+
+.pagination-nick{
+	height:auto;
+	position: relative;
+	
+}
+
+.main-box-nick div{
+	width: 100%;
+	height: 135px;
+	border-bottom: solid 1px gainsboro;
+}
+
+.btn-box-nick{
+	width: auto;
+    text-align: center;
+    top: 70px;
+    background: rgb(243,244,248);
+}
+
+.sel_all{
+	height: 50px;
+	top: -30px;
+	color: rgb(0,160,233);
+}
+
+.sel_all input{
+	margin-left: 20px;
+	margin-right: 14px;
+}
+
+.sel_all span{
+	display: inline-block;
+	width: 130px;
+	height: 40px;
+	background-color: rgb(0,160,233);
+	left: 880px;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 5px;
+}
+
+#er,#ers{
+width: 48%;
+height: 100%;
+float: left;
+margin: 0;
+border: none;	
+}
+
+#ers{
+	float: right;
+	position: relative;
+}
+
+#er1,#er2,#er3,#er4,#er5,#er6,#er7,#er8,#er9,#er10,#er11,#er12,#er13,#er14,#er15{
+	width: auto;
+	height: 30px;
+	border: none;
+	float: left;
+	margin-left: 10px;
+	font-size: 14px;
+	color: #000000;
+}
+
+#er2,#er3,#er4,#er5{
+	margin-top: 28px;
+}
+
+#er1{
+	font-size: 22px;
+	color: #7c0000;
+	margin-top: 22px;
+	margin-left: 64px;
+}
+
+#er6,#er10{
+	margin-left: 83px;
+}
+
+#er13,#er14,#er15{
+	position: absolute;
+}
+
+#er13,#er15{
+	right: 30px;
+}
+
+#er13{
+	top: 27px;
+}
+
+#er14{
+	right: 108px;
+}
+
+#er14,#er15{
+	top: 64px;
+}
+
+.pagination-nick{
+	width: 1098px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+#check{
+	width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 26px;
+    left: 23px;
+    border: none;
+}
+
+#check input{
+	background-color: white;
+	border: solid 1px gainsboro;
+}
+/*底部开始*/
+.bottom{
+	width: 100%;
+	height: 122px;
+	background: gainsboro;
+	margin: 5px 0;
+	color: #873e35;
+}
+
+.B_center{
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+}
+.B_logo{
+	width: 213px;
+	height: 76px;
+	border: solid 1px deepskyblue;
+	float: left;
+	margin-right: 10px;
+	}
+
+.B_center ul,.B_center ul li{
+	float: left;
+}
+
+.B_center ul{
+	position: relative;
+	top: 25px;
+}
+
+.B_center ul li{
+	margin-right: 20px;
+}
+
+.bottom p{
+	display: inline-block;
+	position: relative;
+	left: 340px;
+}
