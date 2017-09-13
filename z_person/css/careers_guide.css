@@ -156,7 +156,7 @@ li{
 /*查找条件开始*/
 .center{
 	width: 1000px;
-	height: 3040px;
+	height: 1330px;
 	position: relative;
 }
 
@@ -275,12 +275,12 @@ button{
 }
 
 .main-box-nick{
-	height: auto;
+	height: 1200px;
 }
 
 .movie{
 	width: 30%;
-	height: 125px;
+	height: 200px;
 	float: left;
 	margin: 0;
 	border: none;
@@ -288,44 +288,8 @@ button{
 	border: solid 1px gainsboro;	
 }
 
-/*#ers{
-	float: right;
-	position: relative;
+.movie img{
+	width: 100%;
+	height: 125px;
+	border: solid 1px black;
 }
-
-#er1,#er2,#er3,#er4,#er5,#er6,#er7,#er8,#er9,#er10,#er11,#er12{
-	width: auto;
-	height: 30px;
-	border: none;
-	float: left;
-	margin-left: 10px;
-	font-size: 14px;
-	color: #000000;
-}
-
-#er1,#er8{
-	font-size: 18px;
-	color: #7c0000;
-}
-
-#er5,#er6,#er7{
-	width: auto;
-	height: auto;
-	padding: 3px;
-	font-size: 12px;
-	color: #0b0b0b;
-	border: solid gainsboro 1px;
-}
-
-#er2{
-	margin-left: 76px;
-}
-
-#er12{
-	width: 72px;
-	height: 72px;
-	border: solid 1px red;
-	position: absolute;
-	top: 20px;
-	right: 50px;
-}*/
