@@ -59,12 +59,7 @@
 			<div class="center">
 				<!--左侧目录开始-->
 				<div class="movie_list">
-					<dl>
-						<dt id="all">教程库</dt>
-						<dd id="job">职前培训</dd>
-						<dd id="sel">就业选择</dd>
-						<dd id="sell">销售技能</dd>
-					</dl>
+					<dl id="menu"></dl>
 				</div>
 				
 				<!--右侧内容开始-->
@@ -73,8 +68,8 @@
 					<div class="sort">
 						<ul>
 							<div>排序方式：</div>
-							<li>默认</li>
-							<li style="margin-left: 24px;">最新</li>
+							<li id="default">默认</li>
+							<li style="margin-left: 24px;" id="time">最新</li>
 							<div class="glass">
 								月薪：
 							</div>
@@ -97,7 +92,7 @@
 						</ul>
 					</div>
 			
-			
+				<!--视频内容部分，动态添加-->
 			    <div class="pagination-nick"></div>
 		   </div>
 		</div>

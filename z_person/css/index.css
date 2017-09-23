@@ -1,6 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	position: relative;
 }
 html{
 	width: 100%;
@@ -21,6 +22,7 @@ body{
 	margin: 0 auto;
 	font-family: "microsoft yahei";
 	color: #909090;
+	
 }
 
 .T_left,.shouji,.T_right{
@@ -161,7 +163,8 @@ body{
 
 .center{
 	width: 1300px;
-	height: 1438px;
+	height: auto;
+	float: left;
 	margin: 0 auto;
 	margin-top: 10px;
 }
@@ -169,6 +172,8 @@ body{
 .content{
 	width: 964px;
 	height: auto;
+	float: left;
+	left: 194px;
 	margin: 0 auto;
 }
 
@@ -217,7 +222,9 @@ height: auto;
 	width: 196px;
 	height: 206px;
 	background: yellow;
-	position: relative;
+	position: absolute;
+	top: 550px;
+	left: 164px;
 }
 
 #adv{
@@ -408,6 +415,7 @@ height: auto;
 	background: gainsboro;
 	margin: 5px 0;
 	color: #873e35;
+	float: left;
 }
 
 .B_center{
@@ -474,6 +482,12 @@ height: auto;
 	right: 0;
 	background-image: url(../img/chugao.png);
 	background-position: -260px -33px;
+}
+
+#city ul li{
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
 }
 /*首页结束*/
 

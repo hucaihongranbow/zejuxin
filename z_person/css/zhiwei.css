@@ -153,147 +153,79 @@ li{
 }
 /*导航结束*/
 
-/*查找条件开始*/
-.content{
-	width: 1037px;
-	height: auto;
-	margin: 0 auto;
-}
-
-.condition{
-	width: 100%;
-	height: 209px;
-	border: solid 1px gainsboro;
-	margin-top: 32px;
-}
-
-.condition ul{
-	width: 100%;
-	height: 30px;
-	color: #000;
-}
-
-.condition ul li,.condition ul div{
-	float: left;
-	width: auto;
-	height: 30px;
-	line-height: 30px;
-	margin-left: 20px;
-	
-}
-.condition ul li{
-	font-size: 14px;
-}
-
-.condition ul div{
-	margin-left: 33px;
-	font-weight: bold;
-}
-.sort{
-	width: 100%;
-	height: 47px;
-	border: solid 1px gainsboro;
-	margin-top: 27px;
-	line-height: 47px;
-}
-
-.sort ul{
-	width: 100%;
-}
-
-.sort ul li,.sort ul div,.sort ul select{
-	float: left;
-	margin-left: 21px;
-}
-.glass,.sort ul select{
-	margin: 0;
-}
-
-.sort ul select{
-	margin-top: 16px;
-	border: none;
-}
 /*内容区开始*/
-button{
-    padding:5px;
-    margin:5px;
-    background: none;
-    box-shadow: none;
-    border: none;
-}
-.active-nick{
-    color:red;
-}
-.page-ipt-nick{
-    width:50px;
-    text-align:center;
-    border: none;
-}
-
-.pagination-nick{
-	height:auto;
-	position: relative;
-	
-}
-
-.main-box-nick div{
-	width: 100%;
-	height: 135px;
-	margin-top: 10px;
-	border: solid 1px gainsboro;
-}
-
-.btn-box-nick{
-	width: auto;
-    text-align: center;
-}
-
-#er,#ers{
-width: 48%;
-height: 100%;
-float: left;
-margin: 0;
-border: none;	
-}
-
-#ers{
-	float: right;
-	position: relative;
-}
-
-#er1,#er2,#er3,#er4,#er5,#er6,#er7,#er8,#er9,#er10,#er11,#er12{
-	width: auto;
-	height: 30px;
-	border: none;
-	float: left;
-	margin-left: 10px;
-	font-size: 14px;
-	color: #000000;
-}
-
-#er1,#er8{
-	font-size: 18px;
-	color: #7c0000;
-}
-
-#er5,#er6,#er7{
-	width: auto;
+.center{
+	width: 1000px;
 	height: auto;
-	padding: 3px;
-	font-size: 12px;
-	color: #0b0b0b;
-	border: solid gainsboro 1px;
+	position: relative;
+	left: 164px;
+	border: solid 1px;
+	float: left;
 }
 
-#er2{
-	margin-left: 76px;
-}
-
-#er12{
-	width: 72px;
-	height: 72px;
+.conply{
+	width: 757px;
+	height: 1565px;
+	float: left;
 	border: solid 1px red;
-	position: absolute;
-	top: 20px;
-	right: 50px;
+}
+
+.con_rig{
+	width: 227px;
+	height: 520px;
+	border: solid 1px deepskyblue;
+	float: left;
+	margin-left: 12px;
+}
+
+.zhw{
+	width: 100%;
+	height: 236px;
+	background: yellow;
+	margin-bottom: 13px;
+}
+
+.jieshao{
+	width: 100%;
+	height: 527px;
+	background: gold;
+	margin-bottom: 18px;
+}
+
+.C_jieshao{
+	width: 100%;
+	height: 258px;
+	background: blanchedalmond;
+	margin-bottom: 18px;
+}
+
+.all_zhi{
+	width: 100%;
+	height: 288px;
+	background: yellowgreen;
+	margin-bottom: 15px;
+}
+
+.tuijian{
+	width: 100%;
+	height: 192px;
+	background: green;
+	margin-bottom: 15px;
+}
+
+.renzheng{
+	width: 100%;
+	height: 277px;
+	margin-bottom: 13px;
+	background: hotpink;
+}
+
+.map{
+	width: 100%;
+	height: 323px;
+	background: red;
+}
+
+.bottom{
+	float: left;
 }

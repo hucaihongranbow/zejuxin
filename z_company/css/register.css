@@ -31,11 +31,11 @@
 }
 
 .l_left span{
-	background-position: -190px -132px;
+	background-position: -160px -169px;
 }
 
 .l_right span{
-	background-position: -160px -132px;
+	background-position: -232px -132px;
 }
 
 .l_left{
@@ -84,7 +84,7 @@
 .login_B{
 	height: 50px;
 	border-top: 1px solid gray;
-	top: 118px;
+	top: 18px;
 }
 
 .login_B div{
@@ -98,7 +98,7 @@
 	width: 300px;
 	height: 35px;
 	margin: 0 auto;
-	top: 78px;
+	top: -22px;
 }
 
 .thirdparty div{
@@ -137,6 +137,11 @@
 	background-position: -160px -169px;
 }
 
-.link{
-	cursor: pointer;
+
+.mailbox{
+	top: 74px;
+}
+
+.mailboxs{
+	top: 35px;
 }

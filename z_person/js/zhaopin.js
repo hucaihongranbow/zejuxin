@@ -1,4 +1,6 @@
-$(document).ready(function  () {
+$(document).ready(function  () {	
+	    var urls=document.URL;
+		console.log(urls)
 	//        定义一个分页方法，可多次调用
         function paginationNick(opt){
 //            参数设置

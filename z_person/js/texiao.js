@@ -4,6 +4,10 @@ window.onload = function  () {
 	var del = document.getElementById("del");
 	var adv = document.getElementById("adv");
 	var advs = document.getElementById("advs");
+	var City=document.getElementById("city");
+	var Did=document.getElementById("did");
+	var citys=document.getElementsByClassName("city");
+	var Sel_cy=document.getElementById("sel_cy");
 	cut.onclick = function () {
 		city.style.display="block";
 	}
@@ -59,4 +63,18 @@ window.onload = function  () {
         }, 30)
     }
     //横幅轮播结束
+
+		Sel_cy.onclick=function () {
+			city.style.display="none"
+//			Did.innerHTML=this.innerHTML;
+		}
+		
+		
+//		for (var j=0;j<citys.length;j++) {
+//			console.log(citys.length)
+//			
+//			citys[j].onclick=function () {
+//				Did.innerHTML=this.innerHTML;
+//			}
+//		}
 }

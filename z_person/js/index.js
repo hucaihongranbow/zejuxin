@@ -1,37 +1,23 @@
+
 var Util = {
 	// 获取模板内容
 	tpl: function (id) {
 		return document.getElementById(id).innerHTML;
-	},
-	// 异步请求方法
-	ajax: function (url, fn) {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				if (xhr.status === 200 || xhr.status === 304) {
-					fn && fn(xhr.responseText)
-				}
-			}
-		};
-		xhr.open('GET', url, true);
-		xhr.send();
 	}
 }
+var job = [];
+var url;
+var urls;
+var city=document.getElementsByClassName("city");
+var City=document.getElementById("city")
+var Did=document.getElementById("did")
 
-/* 最新职位 */
+/* 热门职位 */
 var Home = Vue.extend({
 	template: Util.tpl('tpl_home'),
 	data: function () {
 		return {
-			types: [
-				{id: 1, title: '美食', url: '01.png'},
-				{id: 2, title: '电影', url: '02.png'},
-				{id: 3, title: '酒店', url: '03.png'},
-				{id: 4, title: '休闲娱乐', url: '04.png'},
-				{id: 5, title: '外卖', url: '05.png'},
-				{id: 6, title: 'KTV', url: '06.png'},
-				{id: 7, title: '周边游', url: '07.png'}
-			],
+			types: "",
 			ad: [],
 			list: []
 		}
@@ -39,37 +25,126 @@ var Home = Vue.extend({
 	// 组件创建后执行
 	created: function () {
 		// 显示搜索框
-		this.$parent.hideSearch = true;
+		//this.$parent.hideSearch = true;
 		var that = this;
-		Util.ajax('data/home.json', function (res) {
-			// 将返回的数据转化为json
-			res = JSON.parse(res);
-			if (res.errno === 0) {
-				// 添加广告数据
-				that.$set('ad', res.data.ad)
-				// 添加列表数据
-				that.$set('list', res.data.list)
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function (argument) {
+				if (xhr.readyState == 4) 
+				{
+					var d1 = xhr.responseText;
+					var datas = JSON.parse(d1);
+					console.log(datas)
+					 that.types=datas
+				}
+			};
+			
+			var Did=document.getElementById("did");
+			
+			for (var j=0;j<city.length;j++) {
+				city[j].onclick = function () {
+				url= "http://192.168.2.146:8989/huajiayi/company/selectHotJob/"+this.innerHTML+".do";
+				
+				Did.innerHTML=this.innerHTML;
+				console.log(url)
+				xhr.open("GET",url,true);
+				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xhr.send();
+				
+				 var that=this;
+				//模糊查询
+                $("#sousuo").click(function(){
+                	console.log($("#sou").val())
+                	url="http://192.168.2.146:8989/huajiayi/company/selectaddressJob/"+that.innerHTML+"/"+$("#sou").val()+"/"+null+"/"+null+"/"+null+".do";
+                	console.log(url)
+					xhr.open("GET",url,true);
+					xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					xhr.send();
+                })
+                
+	                //最新职位
+	                $("#new").click(function () {
+	                	console.log(that.innerHTML)
+						url= "http://192.168.2.146:8989/huajiayi/company/selectaddproNewJob/"+that.innerHTML+".do"
+						console.log(url)
+						xhr.open("GET",url,true);
+						xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+						xhr.send();
+	                })
+	                
+	                //热门职位
+	                $("#hot").click(function () {
+	                	console.log(that.innerHTML)
+						url= "http://192.168.2.146:8989/huajiayi/company/selectHotJob/"+that.innerHTML+".do"
+						console.log(url)
+						xhr.open("GET",url,true);
+						xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+						xhr.send();
+	                })
+                
+				}		
 			}
 			
-		})
+			url= "http://192.168.2.146:8989/huajiayi/company/selectHotJob/贵阳.do";
+			console.log(url)
+			xhr.open("GET",url,true);
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xhr.send();
+			
+			//模糊查询
+                $("#sousuo").click(function(){
+                	console.log($("#sou").val())
+                	url="http://192.168.2.146:8989/huajiayi/company/selectpropertyJob/"+$("#sou").val()+".do";
+                	console.log(url)
+					xhr.open("GET",url,true);
+					xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					xhr.send();
+                })
+                
+                //最新职位
+                $("#new").click(function () {
+                	console.log(that.innerHTML)
+					url= "http://192.168.2.146:8989/huajiayi/company/selectaddproNewJob/贵阳.do"
+					console.log(url)
+					xhr.open("GET",url,true);
+					xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					xhr.send();
+                })
+                
+                //热门职位
+                $("#hot").click(function () {
+                	console.log(that.innerHTML)
+					url= "http://192.168.2.146:8989/huajiayi/company/selectHotJob/贵阳.do"
+					console.log(url)
+					xhr.open("GET",url,true);
+					xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					xhr.send();
+                })
+	},
+	
+	methods:{
+		classed:function (data) {
+        	alert("你好")
+        	console.log(data)
+        	window.location.href="zhiwei.html?id="+data;
+        },
+               
+       	canmply: function  () {
+			alert("公司")
+		}
 	}
 })
 
-//热门职位
+//废弃组件
 var Employment = Vue.extend({
 	template:Util.tpl('tpl_employment'),
 	data:function () {
 		return {
-			types: [
-				{id: 1, title: '美食', url: '01.png'},
-				{id: 2, title: '电影', url: '02.png'},
-				{id: 3, title: '酒店', url: '03.png'},
-				{id: 4, title: '休闲娱乐', url: '04.png'},
-				{id: 5, title: '外卖', url: '05.png'},
-				{id: 6, title: 'KTV', url: '06.png'},
-				{id: 7, title: '周边游', url: '07.png'}
-			],
+			types: "",
 		}
+	},
+	
+	// 组件创建后执行
+	created: function () {
 	}
 })
 
@@ -114,3 +189,136 @@ var route = function () {
 
 window.addEventListener('hashchange', route)
 window.addEventListener('load', route)
+
+
+//请求到招聘页面的数据展示
+$(document).ready(function (datad) {
+	invite();
+	
+	function invite () {
+		//菜单数据请求
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		{
+			//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{
+			// IE6, IE5 浏览器执行代码
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				var datas=xmlhttp.responseText
+				var dataed=JSON.parse(datas)
+				console.log(dataed)
+				console.log(dataed.length)
+				var str="";
+				for (var k=0;k<dataed.length;k++) {
+					str+='<li class="list" data-id="'+dataed[k].id+'"><div>'+dataed[k].name+'</div></li>';//难点	
+				}
+	//			console.log(that)
+				$("#menu").html(str)
+				
+				//点击菜单传值到职位详情
+				$(".list").click(function () {
+					var getid=this.getAttribute("data-id");
+	//				alert(getid)
+					$.ajax({
+						type:"get",
+						url:"http://192.168.2.146:8989/huajiayi/company/MenuErji/"+getid+".do",
+						success:function (data) {
+							console.log("url")
+							console.log(data)
+							console.log(data.length)
+							var srt="";
+							for (var j=0;j<data.length;j++) {
+								console.log(j)
+								srt+='<li class="t_list" data-id="'+data[j].id+'"><div>'+data[j].name+'</div></li>'
+							}
+							$("#menus").html(srt)
+							
+							$(".t_list").click(function () {
+								var getids=this.getAttribute("data-id");
+								alert(getids)
+								window.location.href="zhaopin.html?id="+getids+"&address=贵阳";
+							})
+						}
+					});
+				})
+			}
+		}
+		xmlhttp.open("GET","http://192.168.2.146:8989/huajiayi/company/MenuYiji.do",true);
+		xmlhttp.send();
+	
+	}
+
+   //点击选择城市后跳转招聘
+// var Html=$("#did").html();
+	$(".city").click(function () {
+		var dizhi=$(this).html()
+		console.log(dizhi)
+		alert(" hello你好")
+		
+		//菜单数据请求
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		{
+			//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{
+			// IE6, IE5 浏览器执行代码
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				var datas=xmlhttp.responseText
+				var dataed=JSON.parse(datas)
+				console.log(dataed)
+				console.log(dataed.length)
+				var str="";
+				for (var k=0;k<dataed.length;k++) {
+					str+='<li class="list" data-id="'+dataed[k].id+'"><div>'+dataed[k].name+'</div></li>';//难点	
+				}
+	//			console.log(that)
+				$("#menu").html(str)
+				
+				//点击菜单传值到职位详情
+				$(".list").click(function () {
+					var getid=this.getAttribute("data-id");
+	//				alert(getid)
+					$.ajax({
+						type:"get",
+						url:"http://192.168.2.146:8989/huajiayi/company/MenuErji/"+getid+".do",
+						success:function (data) {
+							console.log("url")
+							console.log(data)
+							console.log(data.length)
+							var srt="";
+							for (var j=0;j<data.length;j++) {
+								console.log(j)
+								srt+='<li class="t_list" data-id="'+data[j].id+'"><div>'+data[j].name+'</div></li>'
+							}
+							$("#menus").html(srt)
+							
+							$(".t_list").click(function () {
+								var getids=this.getAttribute("data-id");
+								alert(getids)
+								window.location.href="zhaopin.html?id="+getids+"&address="+dizhi;
+							})
+						}
+					});
+				})
+			}
+		}
+		xmlhttp.open("GET","http://192.168.2.146:8989/huajiayi/company/MenuYiji.do",true);
+		xmlhttp.send();
+	})  
+})

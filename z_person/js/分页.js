@@ -1,7 +1,17 @@
 $(document).ready(function  () {
-	//        定义一个分页方法，可多次调用
+		var urls=document.URL;
+		console.log(urls)
+		var str=urls.slice(urls.indexOf('id'));
+		str = str.replace(/&/g,',');
+ 		console.log(str)
+ 		str = str.replace(/=/g,',');
+ 		console.log(str)
+ 		var str1 = str.split(',');
+ 		console.log(str1[1])
+ 		console.log(str1[3])
+	  //定义一个分页方法，可多次调用
         function paginationNick(opt){
-//            参数设置
+            //参数设置
             var pager={
                 paginationBox:'',//分页容器-- 必填
                 mainBox:'',//内容盒子--必填
@@ -10,7 +20,7 @@ $(document).ready(function  () {
                 ipt:'',//input class-- 必填
                 goBtn:'',//go btn class --必填
                 currentBtn:'',//当前按钮class name --必填
-                pageCount:20,//每页显示几条数据
+                pageCount:2,//每页显示几条数据
                 numBtnCount:3,//当前页左右两边各多少个数字按钮
                 currentPage:0,//当前页码data-page，首屏默认值
                 maxCount:0,//ajax请求数据分成的最大页码
@@ -21,13 +31,12 @@ $(document).ready(function  () {
         function goPage(btn){
             //obj为ajax请求数据
             $.ajax({
-		type:"post",
-		url:"http://juhuituan.boguyuan.com/juhuituan/reqData?action=listCate&acode=1&uid=22285&type=1",
+		type:"get",
+		url:"http://192.168.2.146:8989/huajiayi/company/MenuErjiJob/"+str1[1]+"/"+str1[3]+".do",
 		dataType: "json",
 		success:function (sell) {
 //			alert("hello")
-			
-			var datas=sell.data.items
+			var datas=sell
 			console.log(datas)
 			
 			//obj为ajax请求数据

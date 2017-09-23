@@ -2,9 +2,111 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>企业登录</title>
+		<link rel="stylesheet" type="text/css" href="../z_company/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/C_js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<!--导航开始-->
+		<div class="nav">
+			<div class="name">公司名称</div>
+			<ul>
+				<li>首页</li>
+				<li>职位管理</li>
+				<li>简历管理</li>
+				<li>搜索简历</li>
+				<li>账户管理</li>
+			</ul>
+			<ul class="sigin">
+				<div class="bell"></div>
+				<li>登录</li>
+				<li>注册</li>
+			</ul>
+		</div>
+		<!--导航结束-->
 		
+		
+		<div class="content">
+			<!--普通登录-->
+			<form action="" method="post" class="form_lisit" id="Puto">
+				<div class="method">
+					<div class="l_left"><span></span>普通登录</div>
+					<div class="l_right" id="phone"><span></span>手机登录</div>
+				</div>
+				<input type="text" placeholder="手机号/邮箱/账号" class="phone"/>
+				<input type="password" placeholder="密码" class="pwd"/>
+				
+				<div class="forget">
+					<input type="checkbox" id="check"/><span>7天内自动登录</span>
+					<span style="position: absolute;right: 15px;" class="link">忘记密码</span>
+				</div>
+				<input type="button" value="登录" id="denglu" class="link"/>
+				
+				<div style="margin-top: 17px;padding-left: 20px;font-size: 13px;color: #007aff;">
+					没有账号？<span id="noreg" class="link">立即注册</span>
+				</div>
+				
+				<div class="login_B">
+					<div>或使用以下应用登录</div>
+				</div>
+				
+				<div class="thirdparty">
+					<div class="link"></div>
+					<div class="link"></div>
+				</div>
+			</form>
+			
+			<!--手机登录-->
+			<form action="" method="post" class="form_lisit phone" id="F_phone">
+				<div class="method">
+					<div class="l_left" id="puto"><span></span>普通登录</div>
+					<div class="l_right"><span></span>手机登录</div>
+				</div>
+				<input type="text" placeholder="手机号" />
+				<input type="text" placeholder="验证码" style="width: 160px;margin-right: 10px;left: -129px;"/>
+				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 113px;right: 5px;background-color: #007aff;"></div>
+				<input type="text" placeholder="验证码"/>
+				
+				<div class="forget">
+					<input type="checkbox" id="check"/><span>7天内自动登录</span>
+					<span style="position: absolute;right: 15px;" class="link">忘记密码</span>
+				</div>
+				<input type="button" value="登录" class="l_submit" class="link"/>
+				
+				<div style="margin-top: 17px;padding-left: 20px;font-size: 13px;color: #007aff;">
+					没有账号？<span class="link">立即注册</span>
+				</div>
+				
+				<div class="login_B" style="top: 60px;">
+					<div>或使用以下应用登录</div>
+				</div>
+				
+				<div class="thirdparty" style="top: 20px;">
+					<div class="link"></div>
+					<div class="link"></div>
+				</div>
+			</form>
+		</div>
+		
+		<!--底部开始-->
+		<div class="bottom">
+			<div class="B_center">
+				<div class="B_logo"></div>
+				<ul>
+					<li>熊熊app</li>
+					<li>熊熊微博</li>
+					<li>熊熊微信</li>
+					<li>版本更新</li>
+					<li>帮助中心</li>
+					<li>联系我们</li>
+					<li>招聘解决方案</li>
+					<li>服务热线：4006-2828-35(9:00-18:00)</li>
+				</ul>					
+			</div>
+			<p>安全联盟&copy;2017Lagou京ICP备14023790号-2京公网安备11010802024043号</p>
+		</div>
 	</body>
 </html>

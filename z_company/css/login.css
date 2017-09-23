@@ -1,0 +1,138 @@
+.content{
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+	background: #A6E1EC;
+}
+
+.form_lisit{
+	width: 330px;
+	height: 470px;
+	background-color: white;
+	border: solid 1px gray;
+	position: absolute;
+	right: 200px;
+	top: 15px;
+	border-radius: 5px;
+}
+
+.method{
+	width: 100%;
+	height: 40px;
+	border-bottom: solid 1px gray;
+}
+
+.method span{
+	display: inline-block;
+	width: 30px;
+	height: 70%;
+	top: 8px;
+	background-image: url(../../img/SD.png);		
+}
+
+.l_left span{
+	background-position: -190px -132px;
+}
+
+.l_right span{
+	background-position: -160px -132px;
+}
+
+.l_left{
+	color: #007aff;
+	border-right: solid 1px gray;
+}
+
+.l_left,.l_right{
+	float: left;
+	width: 49.5%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.form_lisit input{
+	display: block;
+	width: 285px;
+	height: 40px;
+	padding-left: 15px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+#check{
+	display: inline;
+	width: inherit;
+	height: inherit;
+}
+
+.forget{
+	padding-left: 15px;
+	margin-top: 15px;
+	line-height: 40px;
+}
+
+.l_submit{
+	font-size: 20px;
+	background-color: #007aff;
+	border: none;
+}
+
+.login_B{
+	height: 50px;
+	border-top: 1px solid gray;
+	top: 118px;
+}
+
+.login_B div{
+	display: inline-block;
+	left: 93px;
+	top: -11px;
+	background-color: white;
+}
+
+.thirdparty{
+	width: 300px;
+	height: 35px;
+	margin: 0 auto;
+	top: 78px;
+}
+
+.thirdparty div{
+	width: 50px;
+	height: 100%;
+	float: left;
+	left: 100px;
+	background-image: url(../../img/SD.png);
+}
+
+.thirdparty div:nth-child(1){
+	background-position: -18px -129px;
+}
+
+.thirdparty div:nth-child(2){
+	background-position: -71px -133px;
+}
+
+.phone{
+	display: none;
+}
+
+.phone .l_left{
+	color: inherit;
+}
+
+.phone .l_left span{
+	background-position: -190px -168px;
+}
+
+.phone .l_right{
+	color: #007aff;
+}
+
+.phone .l_right span{
+	background-position: -160px -169px;
+}

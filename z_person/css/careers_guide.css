@@ -237,7 +237,13 @@ li{
 .sort ul li,.sort ul div,.sort ul select{
 	float: left;
 	margin-left: 21px;
+	cursor: pointer;
 }
+
+.sort ul div{
+	cursor: inherit;
+}
+
 .glass,.sort ul select{
 	margin: 0;
 }

@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>企业注册</title>
-		<link rel="stylesheet" type="text/css" href="../z_company/css/index.css"/>
+		<title>企业登录</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/create_cpl.css"/>
 		<link rel="stylesheet" type="text/css" href="css/register.css"/>
-		
-		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/C_js.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<!--导航开始-->
@@ -29,37 +28,36 @@
 		</div>
 		<!--导航结束-->
 		
-		
+		<!--手机注册-->
 		<div class="content">
-			<!--手机注册-->
-			<form action="" method="post" onsubmit="return false" class="form_lisit" id="Puto">
+			<form action="" method="post" class="form_lisit" id="Puto">
 				<div class="method">
 					<div class="l_left"><span></span>手机注册</div>
 					<div class="l_right" id="phone"><span></span>邮箱注册</div>
 				</div>
-				<input type="text" placeholder="手机号"  class="phone"/>
-				<input type="password" placeholder="密码(6-12位字母加数字下划线)" class="pwd"/>
+				<input type="text" placeholder="手机号"/>
+				<input type="text" placeholder="账户名(6-12位，必须含有字母)"/>
+				<input type="text" placeholder="密码(6-12位字母加数字下划线)" />
+				<input type="text" placeholder="图片验证码"/ style="width: 160px;margin-right: 10px;left: -129px;">
+				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 226px;right: 5px;background-color: #007aff;"></div>
 				
-				<input type="text" placeholder="手机验证码"/ style="width: 180px;margin-right: 10px;left: -109px;" class="IDcode"/>
-				<div class='gain' style="width: 80px;height: 40px;line-height:40px;color: white; border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 171px;right: 5px;background-color: #007aff;">获取验证码</div>
+				<input type="text" placeholder="手机验证码"/ style="width: 180px;margin-right: 10px;left: -109px;">
+				<div style="width: 80px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 284px;right: 5px;background-color: #007aff;"></div>
 				
 				<div class="forget" style="margin-top: 3px;height: 30px;">
 					<input type="checkbox" id="check" style="margin: 0;"/><span style="top: -10px;font-size: 12px;">同意企业会员注册协议&隐私权条款</span>
 				</div>
-				<input type="button" value="注册" class="l_submit" style="margin-top: 2px;"/>
+				<input type="submit" value="注册" class="l_submit" style="margin-top: 2px;"/>
 				
-				<div class="login_B" style="top: 120px;">
+				<div class="login_B">
 					<div>或使用以下应用登录</div>
 				</div>
 				
-				<div class="thirdparty" style="top: 80px;">
+				<div class="thirdparty">
 					<div></div>
 					<div></div>
 				</div>
 			</form>
-			
-			
-			
 			
 			<!--邮箱注册-->
 			<form action="" method="post" class="form_lisit phone" id="F_phone">
@@ -67,15 +65,16 @@
 					<div class="l_left" id="puto"><span></span>手机注册</div>
 					<div class="l_right"><span></span>邮箱注册</div>
 				</div>
-				<input type="text" placeholder="邮箱" class="mall"/>
-				<input type="text" placeholder="密码(6-12位字母加数字下划线)" class="e_pwd"/>
-				<input type="text" placeholder="图片验证码"/ class="yanzheng" style="width: 160px;margin-right: 10px;left: -129px;">
-				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 170px;right: 5px;background-color: #007aff;"></div>
+				<input type="text" placeholder="邮箱"/>
+				<input type="text" placeholder="账户名(6-12位，必须含有字母)"/>
+				<input type="text" placeholder="密码(6-12位字母加数字下划线)" />
+				<input type="text" placeholder="图片验证码"/ style="width: 160px;margin-right: 10px;left: -129px;">
+				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 226px;right: 5px;background-color: #007aff;"></div>
 				
 				<div class="forget" style="margin-top: 3px;height: 30px;">
 					<input type="checkbox" id="check" style="margin: 0;"/><span style="top: -10px;font-size: 12px;">同意企业会员注册协议&隐私权条款</span>
 				</div>
-				<input type="button" value="注册" class="l_submit" style="margin-top: 2px;" class="sigin"/>
+				<input type="submit" value="注册" class="l_submit" style="margin-top: 2px;"/>
 				
 				<div class="login_B mailbox">
 					<div>或使用以下应用登录</div>
