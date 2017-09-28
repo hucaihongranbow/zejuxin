@@ -254,10 +254,12 @@ height: auto;
 }
 
 .all {
-    width: 100%;
+    width: 755px;
     height: 305px;
     margin: 0px auto;
     position: relative;
+    border: solid 1px;
+    left: 100px;
 }
 
 .screen {
@@ -278,7 +280,7 @@ height: auto;
     position: absolute;
     left: 0;
     top: 0px;
-    width: 4622px;
+    width: 2315px;
     height: 100%;
 }
 
@@ -548,4 +550,16 @@ height: auto;
 	height: 135px;
 	margin-top: 20px;
 	border: solid 1px gainsboro;
+}
+
+
+#menus{
+	width: 200px; 
+	height: 300px; 
+	border: solid 1px red;
+	left: 200px;
+	top: -290px;
+	z-index: 1;
+	background: white;
+	display: none;
 }

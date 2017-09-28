@@ -4,15 +4,18 @@
     var security_boolean=false;
     var pwd_boolean=false;
     var confirm_Boolean = false;
-    
-    
+ 
+
 //1.电话号码注册
 $(function () {
 //注册数据请求
  $('.gain').click(function () {
  	console.log("注册")
- 	if ((/^1[34578]\d{9}$/).test($('.phone').val())) {//正则判断
+ 	if ((/^1[34578]\d{9}$/).test($('.phones').val())) {//正则判断
 		phone_boolean=true;
+		
+		console.log($('.phones').val())
+		
 		console.log("填写正确")
 	} else{
 		phone_boolean=false;
@@ -23,14 +26,12 @@ $(function () {
  
  //注册数据请求封装
  function sendRequestphone() {
- 	if (phone_boolean) {
- 		var accounts=$('.phone').val();
+ 		var accounts=$(".phones").val();
    		var yzms=$(".IDcode").val();
  		$.ajax({
  			'type':'get',
  			//获取手机验证码
- 			'url':'http://192.168.2.152:8080/huajiayi/user/ipone.do?phone='+accounts,
- 		    //'datatype':'json',
+ 			'url':'http://192.168.2.151:8080/huajiayi/user/ipone.do?phone='+accounts,
 
  		    //获取验证码成功则执行输入验证码事件(keyup)
  		    'success':function (data) {
@@ -42,7 +43,7 @@ $(function () {
  		    		$.ajax({
  		    			'type':"get",
  		    			//向后台提交验证码
- 		    			'url':"http://192.168.2.152:8080/huajiayi/userLogin/shoujiyanzhengma.do?iphone="+accounts+"&yzm="+$(".IDcode").val(),
+ 		    			'url':"http://192.168.2.151:8080/huajiayi/userLogin/shoujiyanzhengma.do?iphone="+accounts+"&yzm="+$(".IDcode").val(),
  		    			 
  		    			 //验证码提交成功则执行注册按钮的点击函数
  		    			success:function(r){
@@ -56,7 +57,7 @@ $(function () {
 			 		                      $.ajax({
 			 		                      	"type":"post",
 			 		                      	//向后台提交注册信息
-			 		                      	"url":"http://192.168.2.152:8080/huajiayi/userLogin/regist.do?iphone="+accounts+"&password="+pwds,
+			 		                      	"url":"http://192.168.2.151:8080/huajiayi/userLogin/regist.do?iphone="+accounts+"&password="+pwds,
 			 		                        
 			 		                        //提交成功则跳转登录页面
 			 		                      	'success':function (data) {
@@ -91,24 +92,52 @@ $(function () {
  				alert("您好")
  			}
  		})		
- 	} else{
- 		alert('输入不正确')
- 	}
  }
 })
+	
 
-
-// 2.邮箱注册
-$('.yanzheng').focus(function () {
+var mail=$(".mall").val();
+ var e_pwd=$(".e_pwd").val();
+ var code=$(".pic_yan").val();
+		
+ function Img (data) {
+        data.src = 'http://192.168.2.151:8080/huajiayi/captcher/capt.do?'+(new Date()).getTime();   
+	}
+ 
+function yanzheng () {
+			$.ajax({
+				type:"get",
+				url:"http://192.168.2.151:8080/huajiayi/captcher/yzm.do?email="+mail+"&yzm="+$(".pic_yan").val(),
+				success:function (rs) {
+					console.log(rs)
+    				console.log("验证码输入正确")
+				}
+			});
+		}
+ 
+    // 2.邮箱注册
+function wdww () {
    	console.log("注册")
-   	if ((/^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/).test($('.mall').val())) {//正则判断
+   	if ((/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/).test($('.mall').val())) {//正则判断
 		phone_boolean=true;
 		console.log("填写正确")
+		var mail=$(".mall").val();
+		 var e_pwd=$(".e_pwd").val();
+		$.ajax({
+						type:"post",
+						url:"http://192.168.2.151:8080/huajiayi/userLogin/regist.do?email="+mail+"&password="+e_pwd,
+						success:function () {
+							alert("注册成功")
+						},
+						error:function () {
+							alert("cuowu")
+						}
+					});
+
 	} else{
 		phone_boolean=false;
 		alert("填写错误")
 	}
-})
-// 	sendRequestphone();//数据请求函数调用
-
-// })	
+		
+}
+    

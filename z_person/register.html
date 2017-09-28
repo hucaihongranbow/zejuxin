@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../z_company/css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="css/register.css"/>
 		
-		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/C_js.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -37,7 +37,7 @@
 					<div class="l_left"><span></span>手机注册</div>
 					<div class="l_right" id="phone"><span></span>邮箱注册</div>
 				</div>
-				<input type="text" placeholder="手机号"  class="phone"/>
+				<input type="text" placeholder="手机号"  class="phones"/>
 				<input type="password" placeholder="密码(6-12位字母加数字下划线)" class="pwd"/>
 				
 				<input type="text" placeholder="手机验证码"/ style="width: 180px;margin-right: 10px;left: -109px;" class="IDcode"/>
@@ -69,13 +69,16 @@
 				</div>
 				<input type="text" placeholder="邮箱" class="mall"/>
 				<input type="text" placeholder="密码(6-12位字母加数字下划线)" class="e_pwd"/>
-				<input type="text" placeholder="图片验证码"/ class="yanzheng" style="width: 160px;margin-right: 10px;left: -129px;">
-				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 170px;right: 5px;background-color: #007aff;"></div>
+				<input type="text" placeholder="图片验证码"/ style="width: 160px;margin-right: 10px;left: -129px;" class="pic_yan" onkeyup="yanzheng ()"/>
+				<div style="width: 100px;height: 40px;border: solid 1px gray;border-radius: 5px; margin-right: 10px;position: absolute;top: 170px;right: 5px;background-color: #007aff;" class="pic_yz">
+				
+					<img id="captchaImage" class="captchaImage" src="http://192.168.2.151:8080/huajiayi/captcher/capt.do" onclick="Img (this)"/>
+				</div>
 				
 				<div class="forget" style="margin-top: 3px;height: 30px;">
 					<input type="checkbox" id="check" style="margin: 0;"/><span style="top: -10px;font-size: 12px;">同意企业会员注册协议&隐私权条款</span>
 				</div>
-				<input type="button" value="注册" class="l_submit" style="margin-top: 2px;" class="sigin"/>
+				<input type="button" value="注册" class="l_submit" style="margin-top: 2px;" class="sigin verify" onclick="wdww()"/>
 				
 				<div class="login_B mailbox">
 					<div>或使用以下应用登录</div>
@@ -107,3 +110,7 @@
 		</div>
 	</body>
 </html>
+<script type="text/javascript">
+	//点击切换验证码
+ 
+</script>

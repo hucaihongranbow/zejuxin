@@ -33,7 +33,7 @@ $(function () {
  		// 请求向后台发送登录信息
 	 	$.ajax({
 	 		"type":"get",
-	 		"url":"http://192.168.2.152:8080/huajiayi/userLogin/login.do?iphone="+reg+"&password="+pwd,
+	 		"url":"http://192.168.2.151:8080/huajiayi/userLogin/login.do?iphone="+reg+"&password="+pwd,
 	 		"success":function(dataa){
 	 			console.log(dataa)
 	 			alert("登录成功")

@@ -154,43 +154,10 @@ li{
 /*导航结束*/
 
 /*查找条件开始*/
-.center{
-	width: 1000px;
-	height: 1330px;
-	position: relative;
-}
-
-.movie_list{
-	width: 190px;
-	height: 308px;
-	float: left;
-	margin-top: 32px;
-	margin-left: 30px;
-	border: solid 1px gainsboro;
-}
-
-.movie_list dl{
-	width: 100%;
-	height: 100%;
-}
-
-.movie_list dl dt,.movie_list dl dd{
-	width: 96%;
-	height: 39px;
-	line-height: 39px;
-	padding-left: 9px;
-	cursor: pointer;
-}
-
-.movie_list dl dt{
-	border-bottom: 1px solid gainsboro;
-}
-
 .content{
-	width: 710px;
+	width: 1037px;
 	height: auto;
-	float: right;
-	margin-right: 30px;
+	margin: 0 auto;
 }
 
 .condition{
@@ -224,10 +191,10 @@ li{
 }
 .sort{
 	width: 100%;
-	height: 35px;
-	background-color: gainsboro;
+	height: 47px;
+	border: solid 1px gainsboro;
 	margin-top: 27px;
-	line-height: 35px;
+	line-height: 47px;
 }
 
 .sort ul{
@@ -243,7 +210,7 @@ li{
 }
 
 .sort ul select{
-	margin-top: 9px;
+	margin-top: 16px;
 	border: none;
 }
 /*内容区开始*/
@@ -269,27 +236,64 @@ button{
 	
 }
 
+.main-box-nick div{
+	width: 100%;
+	height: 135px;
+	margin-top: 10px;
+	border: solid 1px gainsboro;
+}
+
 .btn-box-nick{
 	width: auto;
     text-align: center;
 }
 
-.main-box-nick{
-	height: 1200px;
+#er,#ers{
+width: 48%;
+height: 100%;
+float: left;
+margin: 0;
+border: none;	
 }
 
-.movie{
-	width: 30%;
-	height: 200px;
-	float: left;
-	margin: 0;
+#ers{
+	float: right;
+	position: relative;
+}
+
+#er1,#er2,#er3,#er4,#er5,#er6,#er7,#er8,#er9,#er10,#er11,#er12{
+	width: auto;
+	height: 30px;
 	border: none;
-	margin: 10px;
-	border: solid 1px gainsboro;	
+	float: left;
+	margin-left: 10px;
+	font-size: 14px;
+	color: #000000;
 }
 
-.movie img{
-	width: 100%;
-	height: 125px;
-	border: solid 1px black;
+#er1,#er8{
+	font-size: 18px;
+	color: #7c0000;
+}
+
+#er5,#er6,#er7{
+	width: auto;
+	height: auto;
+	padding: 3px;
+	font-size: 12px;
+	color: #0b0b0b;
+	border: solid gainsboro 1px;
+}
+
+#er2{
+	margin-left: 76px;
+}
+
+#er12{
+	width: 72px;
+	height: 72px;
+	border: solid 1px red;
+	position: absolute;
+	top: 20px;
+	right: 50px;
 }

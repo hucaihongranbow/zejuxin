@@ -51,8 +51,8 @@
 					<div class="nav_center">
 						<ul>
 							<a href="#"><li>首页</li></a>
-							<a href="zhaopin.html"><li>招聘</li></a>
-							<a href="careers_guide.html"><li>职业培训</li></a>
+							<li id="invite">招聘</li>
+							<li id="zhiye">职业培训</li>
 						</ul>
 					</div>
 				</div>
@@ -62,9 +62,16 @@
 					<div class="C_left">
 						<div class="mulu"><!--目录-->
 							<ul id="menu"><!--左侧菜单--></ul>
-							<ul id="menus" style="width: 200px; height: 300px; border: solid 1px red;left: -200px;top: -290px;z-index: 1;background: white;"><!--二级菜单--></ul>
+							<ul id="menus"><!--二级菜单--></ul>
 						</div>
 					</div><!--内容区左边结束-->
+					 
+					 <div class="all" id='box'>
+						    <div class="screen" style="top: -287px;">
+						        <ul id="benner"></ul>               
+						    </div>
+						</div>
+					
 						<component v-bind:is="view"></component><!--挂载点-->
 		
 					</div>
@@ -75,19 +82,7 @@
 		<!--模板2：热门模板-->
 		<script type="text/template" id="tpl_home">
 			<section class="home-page">	
-					<div class="C_right">
-						<div class="all" id='box'>
-						    <div class="screen">
-						        <ul>
-						            <li><img src="img/1.jpg"/></li>
-						            <li><img src="img/2.jpg"/></li>
-						            <li><img src="img/3.jpg"/></li>
-						            <li><img src="img/4.jpg"/></li>
-						            <li><img src="img/5.jpg"/></li>
-						        </ul>               
-						    </div>
-						</div>
-						
+					<div class="C_right" style="left: 200px;">
 						<div class="title">
 								<span id="hot">
 									热门职位

@@ -18,7 +18,6 @@ var Home = Vue.extend({
 	data: function () {
 		return {
 			types: "",
-			ad: [],
 			list: []
 		}
 	},
@@ -34,7 +33,7 @@ var Home = Vue.extend({
 					var d1 = xhr.responseText;
 					var datas = JSON.parse(d1);
 					console.log(datas)
-					 that.types=datas
+					that.types=datas
 				}
 			};
 			
@@ -50,7 +49,7 @@ var Home = Vue.extend({
 				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xhr.send();
 				
-				 var that=this;
+                var that = this;
 				//模糊查询
                 $("#sousuo").click(function(){
                 	console.log($("#sou").val())
@@ -128,8 +127,10 @@ var Home = Vue.extend({
         	window.location.href="zhiwei.html?id="+data;
         },
                
-       	canmply: function  () {
+       	canmply: function  (datas) {
 			alert("公司")
+			console.log(datas)
+			window.location.href="Company.html?ids="+datas;
 		}
 	}
 })
@@ -225,6 +226,8 @@ $(document).ready(function (datad) {
 				
 				//点击菜单传值到职位详情
 				$(".list").click(function () {
+					
+					$("#menus").css("display","block")
 					var getid=this.getAttribute("data-id");
 	//				alert(getid)
 					$.ajax({
@@ -242,9 +245,10 @@ $(document).ready(function (datad) {
 							$("#menus").html(srt)
 							
 							$(".t_list").click(function () {
+								$("#menus").css("display","none")
 								var getids=this.getAttribute("data-id");
 								alert(getids)
-								window.location.href="zhaopin.html?id="+getids+"&address=贵阳";
+								window.location.href="zhaopin.html?id="+getids+"&address=贵阳&id1="+null+"&id2="+null+"&id3="+null;
 							})
 						}
 					});
@@ -311,7 +315,7 @@ $(document).ready(function (datad) {
 							$(".t_list").click(function () {
 								var getids=this.getAttribute("data-id");
 								alert(getids)
-								window.location.href="zhaopin.html?id="+getids+"&address="+dizhi;
+								window.location.href="zhaopin.html?id="+getids+"&address="+dizhi+"&id1="+null+"&id2="+null+"&id3="+null;
 							})
 						}
 					});
@@ -320,5 +324,27 @@ $(document).ready(function (datad) {
 		}
 		xmlhttp.open("GET","http://192.168.2.146:8989/huajiayi/company/MenuYiji.do",true);
 		xmlhttp.send();
-	})  
+	}) 
+	
+	
+	$.ajax({
+		type:"get",
+		url:"http://192.168.2.146:8989/huajiayi/company/queryHjy.do",
+		success:function (dataf) {
+			console.log(dataf)
+			var list='';
+			for (var n=0;n<dataf.length;n++) {
+				list+="<li class='lis'><img src="+dataf[n].pic+"/></li>"
+			}
+			$("#benner").html(list)
+		}
+	});
+	
+	$("#invite").click(function () {
+		window.location.href="zhaopin.html?id="+null+"&ids="+null+"&id1="+null+"&id2="+null+"&id3="+null;
+	})
+	
+	$("#zhiye").click(function () {
+		window.location.href="careers_guide.html?id=0";
+	})
 })

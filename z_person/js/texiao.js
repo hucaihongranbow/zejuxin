@@ -26,9 +26,10 @@ window.onload = function  () {
     var screen = box.children[0];
     var ul = screen.children[0];
     var ol = screen.children[1];
-    var ulLis = ul.children;
+    var ulLis = document.getElementsByClassName("lis");
     var imgWidth = screen.offsetWidth;
     var timer = null;
+    console.log(ulLis)
     
     var firstImg = ulLis[0].cloneNode(true);
     ul.appendChild(firstImg);
